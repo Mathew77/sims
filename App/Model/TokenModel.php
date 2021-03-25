@@ -2,13 +2,6 @@
     namespace App;
     use App\Model;
 
-    /**
-     * TokenModel - This Model is consumed basically by the UserController and is also consumed by other controllers and Middlewares...
-     *
-     * @author      Ilori Stephen A <stephenilori458@gmail.com>
-     * @link        https://github.com/learningdollars/php-rest-api/App/Model/TokenModel.php
-     * @license     MIT
-     */
     class TokenModel extends Model {
 
         /**

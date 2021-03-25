@@ -4,13 +4,6 @@
     use App\CatalogModel;
     use App\ProductModel;
 
-    /**
-     * Controller - The Base Controller for all other Controllers.... All Other Controllers extends this Controller.
-     *
-     * @author      Ilori Stephen A <stephenilori458@gmail.com>
-     * @link        https://github.com/learningdollars/php-rest-api/App/Controller/Controller.php
-     * @license     MIT
-     */
     class Controller {
 
         /**

@@ -4,12 +4,7 @@
     use PDO;
     use Exception;
 
-    /**
-     * Model - The Base Model for all other Models.... All Other Model extends this Model.
-     *
-     * @author      Mathew Adegbite <mathewadegbite@gmail.com>
-    
-     */
+  
     class Model {
         protected static $dbHost = '127.0.0.1';
         protected static $dbName = 'sim';

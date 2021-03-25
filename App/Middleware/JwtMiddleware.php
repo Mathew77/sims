@@ -6,13 +6,6 @@
     use App\TokenModel;
     use App\UserModel;
 
-    /**
-     * JwtMiddleware - The JwtMiddleware. This Controller makes use of a few Models, Classes and packages for authenticating requests....
-     *
-     * @author      Ilori Stephen A <stephenilori458@gmail.com>
-     * @link        https://github.com/learningdollars/php-rest-api/App/Middleware/JWTMiddleware.php
-     * @license     MIT
-     */
     class JwtMiddleware {
         protected static $user;
         protected static $token;

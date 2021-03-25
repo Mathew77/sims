@@ -8,13 +8,6 @@
     use Firebase\JWT\JWT;
     use App\RequestMiddleware;    
 
-    /**
-     * UserController - The UserController. This Controller makes use of a few Models for creating, updating, fetching and deleting Users.
-     *
-     * @author      Ilori Stephen A <stephenilori458@gmail.com>
-     * @link        https://github.com/learningdollars/php-rest-api/App/Controller/UserController.php
-     * @license     MIT
-     */
     class UserController extends Controller {
         
         /**

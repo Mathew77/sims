@@ -1,13 +1,6 @@
 <?php
     namespace App;
 
-    /**
-     * RequestMiddleware - The RequestMiddleware. This Controller makes use of a few Models, Classes and packages for authenticating requests....
-     *
-     * @author      Ilori Stephen A <stephenilori458@gmail.com>
-     * @link        https://github.com/learningdollars/php-rest-api/App/Middleware/RequestMiddleware.php
-     * @license     MIT
-     */
     class RequestMiddleware {
         protected static $Request;
 
