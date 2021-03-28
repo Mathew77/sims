@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2021 at 04:25 PM
+-- Generation Time: Mar 28, 2021 at 04:33 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.13
 
@@ -1017,14 +1017,14 @@ INSERT INTO `ms_lga` (`LgaId`, `StateId`, `Fullname`, `Description`) VALUES
 CREATE TABLE `ms_program` (
   `programid` int(11) NOT NULL,
   `program` varchar(100) NOT NULL,
-  `short_name` varchar(45) NOT NULL
+  `label` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ms_program`
 --
 
-INSERT INTO `ms_program` (`programid`, `program`, `short_name`) VALUES
+INSERT INTO `ms_program` (`programid`, `program`, `label`) VALUES
 (1, 'CCT', 'cct'),
 (2, 'GEEP', 'geep'),
 (3, 'NHGSFP', 'nhgsfp'),
