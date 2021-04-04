@@ -15,15 +15,14 @@
          */
         public static function createUser($payload)
         {
-            $Sql = "INSERT INTO `db_users` (firstName, lastName, email, password, created_at, updated_at) VALUES (:firstName, :lastName, :email, :password, :created_at, :updated_at)";
+           $Sql = "INSERT INTO `sys_user_info` (loginid, pwd) VALUES (:loginid, :pwd )";
             Parent::query($Sql);
             // Bind Params...
-            Parent::bindParams('firstName', $payload['firstName']);
-            Parent::bindParams('lastName', $payload['lastName']);
-            Parent::bindParams('email', $payload['email']);
-            Parent::bindParams('password', $payload['password']);
-            Parent::bindParams('created_at', $payload['created_at']);
-            Parent::bindParams('updated_at', $payload['updated_at']);
+     
+            Parent::bindParams('loginid', $payload['userid']);
+            Parent::bindParams('pwd', $payload['pwd']);
+            // Parent::bindParams('created', $payload['created']);
+            // Parent::bindParams('updated', $payload['updated']);
 
             $newUser = Parent::execute();
             //print( $newUser);
@@ -81,14 +80,14 @@
          * @param string $email  The email of the row to be fetched...
          * @return array Anonymous
          */
-        public static function checkEmail($email)
+        public static function checkLoginId($loginid)
         {
-            $Sql = "SELECT * FROM `db_users` WHERE email = :email";
+            $Sql = "SELECT * FROM `sys_user_info` WHERE loginid = :loginid";
             Parent::query($Sql);
             // Bind Params...
-            Parent::bindParams('email', $email);
-            $emailData = Parent::fetch();
-            if (empty($emailData)) {
+            Parent::bindParams('loginid', $loginid);
+            $loginidData = Parent::fetch();
+            if (empty($loginidData)) {
                 $Response = array(
                     'status' => false,
                     'data' => []
@@ -98,7 +97,7 @@
 
             $Response = array(
                 'status' => true,
-                'data' => $emailData
+                'data' => $loginidData
             );
             return $Response;
         }

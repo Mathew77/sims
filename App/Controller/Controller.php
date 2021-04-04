@@ -87,9 +87,9 @@
                 if ($payload->validator == 'emailExists') {
                     try {
                         $UserModel = new UserModel();
-                        $checkEmail = $UserModel::checkEmail($payload->data);
+                        $checkLoginId = $UserModel::checkLoginId($payload->data);
 
-                        if ($checkEmail['status']) {
+                        if ($checkLoginId['status']) {
                             array_push($response, [
                                 'key' => $payload->key,
                                 'message' => "Sorry {$payload->key} already exists. Please try with a different Email."

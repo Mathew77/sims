@@ -3,7 +3,7 @@
 
     use Exception;
     use App\UserModel;
-    use App\TokenModel;
+    use App\PrivilegeModel;
     use App\Controller;
     use Firebase\JWT\JWT;
     use App\RequestMiddleware;    
@@ -39,36 +39,13 @@
             $data = json_decode($request->body());                   
             // Do some validation...
             $validationObject = array(
+               
                 (Object) [
-                    'validator' => 'required',
-                    'data' => isset($data->firstName) ? $data->firstName : '',
-                    'key' => 'First Name'
+                    'validator' => 'useridExists',
+                    'data' => isset($data->userid) ? $data->userid : '',
+                    'key' => 'Userid'
                 ],
-                (Object) [
-                    'validator' => 'string',
-                    'data' => isset($data->firstName) ? $data->firstName : '',
-                    'key' => 'First Name'
-                ],
-                (Object) [
-                    'validator' => 'required',
-                    'data' => isset($data->lastName) ? $data->lastName : '',
-                    'key' => 'Last Name',
-                ],
-                (Object) [
-                    'validator' => 'string',
-                    'data' => isset($data->lastName) ? $data->lastName : '',
-                    'key' => 'Last Name',
-                ],
-                (Object) [
-                    'validator' => 'emailExists',
-                    'data' => isset($data->email) ? $data->email : '',
-                    'key' => 'Email'
-                ],
-                (Object) [
-                    'validator' => 'min:7',
-                    'data' => isset($data->password) ? $data->password : '',
-                    'key' => 'Password'
-                ]
+                
             );
 
             $validationBag = Parent::validation($validationObject);                    
@@ -79,12 +56,12 @@
 
             // Trim the response and create the account....
             $payload = array(
-                'firstName' => htmlspecialchars(stripcslashes(strip_tags($data->firstName))),
-                'lastName' => htmlspecialchars(stripcslashes(strip_tags($data->lastName))),
-                'email' => stripcslashes(strip_tags($data->email)),
-                'password' => password_hash($data->password, PASSWORD_BCRYPT),
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                // 'firstName' => htmlspecialchars(stripcslashes(strip_tags($data->firstName))),
+                // 'lastName' => htmlspecialchars(stripcslashes(strip_tags($data->lastName))),
+                 'userid' => $data->userid,
+                'pwd' => password_hash($data->pwd, PASSWORD_BCRYPT),
+                'created' => date('Y-m-d H:i:s'),
+                'updated' => date('Y-m-d H:i:s')
             );
 
             try {
@@ -99,17 +76,17 @@
                         'iat' => time(),
                         'iss' => 'PHP_MINI_REST_API', //!!Modify:: Modify this to come from a constant
                         "exp" => strtotime('+ 7 Days'),
-                        "user_id" => $UserData['data']['user_id']
+                        "userid" => $UserData['data']['userid']
                     );
                     $Jwt = JWT::encode($tokenPayload, $tokenSecret);
 
                     // Save JWT Token...
-                    $TokenModel = new TokenModel();
-                    $TokenModel->createToken([
-                        'user_id' => $UserData['data']['user_id'],
-                        'jwt_token'=> $Jwt
-                    ]);
-                    $UserData['data']['token'] = $Jwt;
+                    // $TokenModel = new TokenModel();
+                    // $TokenModel->createToken([
+                    //     'user_id' => $UserData['data']['user_id'],
+                    //     'jwt_token'=> $Jwt
+                    // ]);
+                    // $UserData['data']['token'] = $Jwt;
                     
                     // Return Response............
                     $Response['status'] = 201;
@@ -151,6 +128,7 @@
             $Middleware = new RequestMiddleware();
             $Middleware = $Middleware::acceptsJson();   
 
+            
             if (!$Middleware) {
                 array_push($Response, [
                     'status' => 400,
@@ -164,43 +142,43 @@
 
             $data = json_decode($request->body());                   
             // Do some validation...
-            $validationObject = array(
-                (Object) [
-                    'validator' => 'required',
-                    'data' => isset($data->email) ? $data->email : '',
-                    'key' => 'Email'
-                ],
-                (Object) [
-                    'validator' => 'required',
-                    'data' => isset($data->password) ? $data->password : '',
-                    'key' => 'Password'
-                ],
-                (Object) [
-                    'validator' => 'min:7',
-                    'data' => isset($data->password) ? $data->password : '',
-                    'key' => 'Password'
-                ]
-            );
+            // $validationObject = array(
+            //     (Object) [
+            //         'validator' => 'required',
+            //         'data' => isset($data->email) ? $data->email : '',
+            //         'key' => 'Email'
+            //     ],
+            //     (Object) [
+            //         'validator' => 'required',
+            //         'data' => isset($data->password) ? $data->password : '',
+            //         'key' => 'Password'
+            //     ],
+            //     (Object) [
+            //         'validator' => 'min:7',
+            //         'data' => isset($data->password) ? $data->password : '',
+            //         'key' => 'Password'
+            //     ]
+            // );
 
-            $validationBag = Parent::validation($validationObject);                    
-            if ($validationBag->status) {              
-                $response->code(400)->json($validationBag);  
-                return;
-            }
+            // $validationBag = Parent::validation($validationObject);                    
+            // if ($validationBag->status) {              
+            //     $response->code(400)->json($validationBag);  
+            //     return;
+            // }
 
             // Trim the response and create the account....
             $payload = array(
-                'email' => stripcslashes(strip_tags($data->email)),
-                'password' => $data->password,
-                'updated_at' => date('Y-m-d H:i:s')
+                'loginid' => $data->userid,
+                'pwd' => $data->pwd,
+                'updated' => date('Y-m-d H:i:s')
             );
 
             try {
                 $UserModel = new UserModel();
-                $UserData = $UserModel::checkEmail($payload['email']);
+                $UserData = $UserModel::checkLoginId($payload['loginid']);
                 if ($UserData['status']) {
 
-                    if (password_verify($payload['password'], $UserData['data']['password'])) {
+                    if (password_verify($payload['pwd'], $UserData['data']['pwd'])) {
                         // Initialize JWT Token....
                         $tokenExp = date('Y-m-d H:i:s');  
                         $tokenSecret = Parent::JWTSecret();
@@ -208,21 +186,18 @@
                             'iat' => time(),
                             'iss' => 'PHP_MINI_REST_API', //!!Modify:: Modify this to come from a constant
                             "exp" => strtotime('+ 7 Days'),
-                            "user_id" => $UserData['data']['id']
+                            "user_id" => $UserData['data']['loginid']
                         );
                         $Jwt = JWT::encode($tokenPayload, $tokenSecret);
-
-                        // Save JWT Token...
-                        $TokenModel = new TokenModel();
-                        $TokenModel::createToken([
-                            'user_id' => $UserData['data']['id'],
-                            'jwt_token'=> $Jwt
-                        ]);
                         $UserData['data']['token'] = $Jwt;
-                        
+                        //check user Privilege
+                        $UserData['data']['userid'];
+                        $UserPrivilegeModel2 = new PrivilegeModel();
+                        $UserDataPrivileges = $UserPrivilegeModel2->fetchUserPrivilegeById($UserData['data']['userid']);
+                        $UserData['data']['privilege'] = $UserDataPrivileges;
                         // Return Response............
                         $Response['status'] = 201;
-                        $Response['message'] = '';
+                        $Response['message'] = 'Login Successful';
                         $Response['data'] = $UserData;
 
                         $response->code(201)->json($Response);
@@ -230,7 +205,7 @@
                     }
 
                     $Response['status'] = 401;
-                    $Response['message'] = 'Please, check your Email and Password and try again.';
+                    $Response['message'] = 'Please, check your User ID and Password and try again.';
                     $Response['data'] = [];
                     $response->code(401)->json($Response);
                     return;

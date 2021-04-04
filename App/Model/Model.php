@@ -7,7 +7,7 @@
   
     class Model {
         protected static $dbHost = '127.0.0.1';
-        protected static $dbName = 'sim';
+        protected static $dbName = 'sims';
         protected static $dbUser = 'root';
         protected static $dbPass = '';
         protected static $dbConn;
