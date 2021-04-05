@@ -20,12 +20,19 @@ By default, these are the list of endpoints available when you clone the project
 
 1. Create New User **`/api/v1/user`**: **`HTTP POST`**
 
-```php
-    $Klein->respond('POST', '/api/v1/user', [ new UserController(), 'createNewUser' ]);
-```
 
 2. Login A User **`/api/v1/user-auth`**: **`HTTP POST`**
 
 ```php
     $Klein->respond('POST', '/api/v1/user-auth', [ new UserController(), 'login' ]);
+
+
+```
+
+2. Get All the State, LGA, Programmes assign to user **`/api/v1/user-privilege`**: **`HTTP POST`**
+
+```php
+    $Klein->respond('POST', '/api/v1/user-privilege', [ new PrivilegeController(), 'fetchUserPriviledgesById' ]);
+
+
 ```

@@ -11,13 +11,14 @@
         
        
  
-        public function fetchUser($request, $response)
+        public function fetchUserPriviledgesById($request, $response)
         {
             $Response = [];
             // Call the Middleware
            
             $JwtMiddleware = new JwtMiddleware();
-            $jwtMiddleware = $JwtMiddleware::getAndDecodeToken();
+            $jwtMiddleware = $JwtMiddleware->getAndDecodeToken();
+
             if (isset($jwtMiddleware) && $jwtMiddleware == false) {
                 $response->code(400)->json([
                     'status' => 401,
@@ -26,35 +27,39 @@
                 ]);
                 return;
             }
+            $data = json_decode($request->body());
+             // Trim the response 
+             $payload = array(
+                'userId' => $data->userid,
+            );
+            try {
+               //Get User Privilege 
+                $PrivilegeModel = new PrivilegeModel();
+                $UserPrivileges = $PrivilegeModel->fetchUserPrivilegeById($payload['userId']);
 
-            // try {
-            //    // $ProductModel = new ProductModel();
-            //     $PrivilegeModel = new PrivilegeModel();
-            //     $products = $ProductModel::fetchProducts();
+                if ($UserPrivileges['status']) {
+                    $Response['status'] = 200;
+                    $Response['data'] = $UserPrivileges['data'];
+                    $Response['message'] = '';
 
-            //     if ($products['status']) {
-            //         $Response['status'] = 200;
-            //         $Response['data'] = $products['data'];
-            //         $Response['message'] = '';
+                    $response->code(200)->json($Response);
+                    return;
+                }
 
-            //         $response->code(200)->json($Response);
-            //         return;
-            //     }
-
-            //     $Response['status'] = 400;
-            //     $Response['data'] = [];
-            //     $Response['message'] = 'An unexpected error occurred and your product could not be retrieved. Please, try again later.';
+                $Response['status'] = 400;
+                $Response['data'] = [];
+                $Response['message'] = 'An unexpected error occurred and your User Priviledges could not be retrieved. Please, try again later.';
                 
-            //     $response->code(400)->json($Response);
-            //     return;
-            // } catch (Exception $e) {
-            //     $Response['status'] = 500;
-            //     $Response['message'] = $e->getMessage();
-            //     $Response['data'] = [];
+                $response->code(400)->json($Response);
+                return;
+            } catch (Exception $e) {
+                $Response['status'] = 500;
+                $Response['message'] = $e->getMessage();
+                $Response['data'] = [];
                 
-            //     $response->code(500)->json($Response);
-            //     return;
-            // }
+                $response->code(500)->json($Response);
+                return;
+            }
         }
         
     }

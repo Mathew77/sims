@@ -81,8 +81,9 @@
                     // Query the database for the token and decode it....
                     $TokenModel = new TokenModel();
                     // Check the database for the query before decoding it...
-                    $tokenDB = $TokenModel::fetchToken($token);
-
+                   
+                    $tokenDB = $TokenModel->fetchToken($token);
+                    
                     if ($tokenDB['status']) {
                         // decode the token and pass the result on to the controller....
                         $decodedToken = (Array) JWT::decode($token, Self::JWTSecret(), array('HS256'));
