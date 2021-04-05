@@ -29,10 +29,45 @@ By default, these are the list of endpoints available when you clone the project
 
 ```
 
-2. Get All the State, LGA, Programmes assign to user **`/api/v1/user-privilege`**: **`HTTP POST`**
+3. Get All the State, LGA, Programmes assign to user **`/api/v1/user-privilege`**: **`HTTP POST`**
 
 ```php
     $Klein->respond('POST', '/api/v1/user-privilege', [ new PrivilegeController(), 'fetchUserPriviledgesById' ]);
+
+
+```
+3. Get All the State, LGA, Programmes assign to user **`/api/v1/user-privilege`**: **`HTTP POST`**
+
+```php
+    $Klein->respond('POST', '/api/v1/user-privilege', [ new PrivilegeController(), 'fetchUserPriviledgesById' ]);
+
+
+```
+4.  Get All CCT Program Period **`/api/v1/cct-period`**: **`HTTP POST`**
+
+```php
+    $Klein->respond('POST', '/api/v1/cct-period', [ new PrivilegeController(), 'fetch_cct_period' ]);
+
+
+```
+5. Get All CCT Program Period **`/api/v1/gee-period`**: **`HTTP POST`**
+
+```php
+    $Klein->respond('GET', '/api/v1/gee-period', [ new PrivilegeController(), 'fetch_gee_period' ]);
+
+
+```
+6. Get All NPO Program Period **`/api/v1/npo-period`**: **`HTTP POST`**
+
+```php
+    $Klein->respond('GET', '/api/v1/npo-period', [ new PrivilegeController(), 'fetch_npo_period' ]);
+
+
+```
+7. Get All SFP Program Period **`/api/v1/sfp-period`**: **`HTTP POST`**
+
+```php
+    $Klein->respond('GET', '/api/v1/sfp-period', [ new PrivilegeController(), 'fetch_sfp_period' ]);
 
 
 ```
