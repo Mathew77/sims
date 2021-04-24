@@ -32,9 +32,8 @@
     $Klein->respond('GET', '/api/v1/sfp-period', [ new PeriodController(), 'fetch_sfp_period' ]); // Fetch Sfp Period
     $Klein->respond('GET', '/api/v1/cct-summary', [ new SummaryController(), 'fetch_cct_summary' ]); // Fetch cct Summary Detail 
     $Klein->respond('GET', '/api/v1/gee-summary', [ new SummaryController(), 'fetch_gee_summary' ]); // Fetch cct Summary Detail 
-    $Klein->respond('GET', '/api/v1/cct-summary', [ new SummaryController(), 'fetch_cct_summary' ]); // Fetch cct Summary Detail 
-    $Klein->respond('GET', '/api/v1/cct-summary', [ new SummaryController(), 'fetch_cct_summary' ]); // Fetch cct Summary Detail 
-    $Klein->respond('GET', '/api/v1/cct-summary', [ new SummaryController(), 'fetch_cct_summary' ]); // Fetch cct Summary Detail 
+    $Klein->respond('GET', '/api/v1/npo-summary', [ new SummaryController(), 'fetch_npo_summary' ]); // Fetch cct Summary Detail 
+    $Klein->respond('GET', '/api/v1/sfp-summary', [ new SummaryController(), 'fetch_sfp_summary' ]); // Fetch cct Summary Detail 
     $Klein->respond('GET', '/api/v1/state', [ new StateController(), 'fetch_state' ]); // Fetch State BY User ID
     $Klein->respond('GET', '/api/v1/lga', [ new StateController(), 'fetch_lga' ]); // Fetch Lga BY User ID
    

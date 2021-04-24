@@ -16,12 +16,14 @@
             $data = json_decode($request->body());
              // Trim the response 
              $payload = array(
-                'program' => $data->program,
+                'state_id' => $data->state_id,
+                'period' => $data->period,
             );
+            
             try {
                //Get CCT PERIOD
                 $Summary = new SummaryModal();
-                $SummaryDetail = $Summary->cctSummary($payload['program'], 3);
+                $SummaryDetail = $Summary->cctSummary($payload['state_id'], $payload['period']);
 
                 if ($SummaryDetail['status']) {
                     $Response['status'] = 200;
@@ -55,12 +57,13 @@
             $data = json_decode($request->body());
              // Trim the response 
              $payload = array(
-                'program' => $data->program,
+                'state_id' => $data->state_id,
+                'period' => $data->period,
             );
             try {
                //Get CCT PERIOD
                 $PeriodModal2 = new PeriodModal();
-                $ProgramPeriod = $PeriodModal2->geePeriod($payload['program']);
+                $ProgramPeriod = $PeriodModal2->geePeriod($payload['state_id'], $payload['period']);
 
                 if ($ProgramPeriod['status']) {
                     $Response['status'] = 200;
@@ -94,12 +97,13 @@
             $data = json_decode($request->body());
              // Trim the response 
              $payload = array(
-                'program' => $data->program,
+                'state_id' => $data->state_id,
+                'period' => $data->period,
             );
             try {
                //Get CCT PERIOD
                 $PeriodModal2 = new PeriodModal();
-                $ProgramPeriod = $PeriodModal2->npoPeriod($payload['program']);
+                $ProgramPeriod = $PeriodModal2->npoPeriod($payload['state_id'], $payload['period']);
 
                 if ($ProgramPeriod['status']) {
                     $Response['status'] = 200;
@@ -133,12 +137,13 @@
             $data = json_decode($request->body());
              // Trim the response 
              $payload = array(
-                'program' => $data->program,
+                'state_id' => $data->state_id,
+                'period' => $data->period,
             );
             try {
                //Get CCT PERIOD
                 $PeriodModal2 = new PeriodModal();
-                $ProgramPeriod = $PeriodModal2->sfpPeriod($payload['program']);
+                $ProgramPeriod = $PeriodModal2->sfpPeriod($payload['state_id'], $payload['period']);
 
                 if ($ProgramPeriod['status']) {
                     $Response['status'] = 200;

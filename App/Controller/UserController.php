@@ -136,30 +136,7 @@
             }
 
             $data = json_decode($request->body());                   
-            // Do some validation...
-            // $validationObject = array(
-            //     (Object) [
-            //         'validator' => 'required',
-            //         'data' => isset($data->email) ? $data->email : '',
-            //         'key' => 'Email'
-            //     ],
-            //     (Object) [
-            //         'validator' => 'required',
-            //         'data' => isset($data->password) ? $data->password : '',
-            //         'key' => 'Password'
-            //     ],
-            //     (Object) [
-            //         'validator' => 'min:7',
-            //         'data' => isset($data->password) ? $data->password : '',
-            //         'key' => 'Password'
-            //     ]
-            // );
-
-            // $validationBag = Parent::validation($validationObject);                    
-            // if ($validationBag->status) {              
-            //     $response->code(400)->json($validationBag);  
-            //     return;
-            // }
+     
 
             // Trim the response 
             $payload = array(

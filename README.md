@@ -23,52 +23,56 @@ By default, these are the list of endpoints available when you clone the project
 
 2. Login A User **`/api/v1/user-auth`**: **`HTTP POST`**
 
-```php
-    $Klein->respond('POST', '/api/v1/user-auth', [ new UserController(), 'login' ]);
+```
 
+POST : http://simis.cleavey.com.ng/api/v1/user-auth
+
+REQUEST BODY :
+
+{
+
+    "userid": "ab-001-0002",
+    "pwd": "123456"
+}
 
 ```
 
-3. Get All the State, LGA, Programmes assign to user **`/api/v1/user-privilege`**: **`HTTP POST`**
 
-```php
-    $Klein->respond('POST', '/api/v1/user-privilege', [ new PrivilegeController(), 'fetchUserPriviledgesById' ]);
+3. Get All the State, LGA, Programmes assign to user **`/api/v1/user-privilege`**: **`HTTP GET`**
+
+```
+
+    GET : http://simis.cleavey.com.ng/api/v1/user-privilege
+    
 
 
 ```
-3. Get All the State, LGA, Programmes assign to user **`/api/v1/user-privilege`**: **`HTTP POST`**
+4.  Get All CCT Program Period **`/api/v1/cct-period`**: **`HTTP GET`**
 
-```php
-    $Klein->respond('POST', '/api/v1/user-privilege', [ new PrivilegeController(), 'fetchUserPriviledgesById' ]);
+```
+    GET : http://simis.cleavey.com.ng/api/v1/cct-period
 
 
 ```
-4.  Get All CCT Program Period **`/api/v1/cct-period`**: **`HTTP POST`**
+5. Get All CCT Program Period **`/api/v1/gee-period`**: **`HTTP GET`**
 
-```php
-    $Klein->respond('POST', '/api/v1/cct-period', [ new PrivilegeController(), 'fetch_cct_period' ]);
+```
+GET : http://simis.cleavey.com.ng/api/v1/gee-period
 
 
 ```
-5. Get All CCT Program Period **`/api/v1/gee-period`**: **`HTTP POST`**
+6. Get All NPO Program Period **`/api/v1/npo-period`**: **`HTTP GET`**
 
-```php
-    $Klein->respond('GET', '/api/v1/gee-period', [ new PrivilegeController(), 'fetch_gee_period' ]);
-
-
-```
-6. Get All NPO Program Period **`/api/v1/npo-period`**: **`HTTP POST`**
-
-```php
-    $Klein->respond('GET', '/api/v1/npo-period', [ new PrivilegeController(), 'fetch_npo_period' ]);
+```GET : http://simis.cleavey.com.ng/api/v1/npo-periodod' ]);
 
 
 ```
-7. Get All SFP Program Period **`/api/v1/sfp-period`**: **`HTTP POST`**
+7. Get All SFP Program Period **`/api/v1/sfp-period`**: **`HTTP GET`**
 
-```php
-    $Klein->respond('GET', '/api/v1/sfp-period', [ new PrivilegeController(), 'fetch_sfp_period' ]);
 
+
+```
+GET : http://simis.cleavey.com.ng/api/v1/sfp-period
 
 8. GET LIST OF STATE BY USER ID
 
@@ -133,148 +137,55 @@ RESPONSE :
             "Zone": "South South",
             "Description": null
         },
-        {
-            "StateId": "4",
+      
+      
+    ]
+
+8. GET FOR SUMMARY VIEW 
+
+POST : http://simis.cleavey.com.ng/api/v1/cct-summary  
+
+        http://simis.cleavey.com.ng/api/v1/gee-summary
+
+        http://simis.cleavey.com.ng/api/v1/npo-summary
+
+        http://simis.cleavey.com.ng/api/v1/sfp-summary
+
+REQUEST BODY :
+{
+    "period": 3,  
+    "state_id": 2
+}
+```
+
+RESPONSE :
+
+"status": 200,
+    "data": [
+         {
+            "StateId": "1",
             "RegionId": "4",
-            "Fullname": "ANAMBRA",
-            "Label": "AN",
+            "Fullname": "ABIA",
+            "Label": "AB",
             "Zone": "South East",
             "Description": null
         },
         {
-            "StateId": "5",
+            "StateId": "2",
             "RegionId": "2",
-            "Fullname": "BAUCHI",
-            "Label": "BA",
+            "Fullname": "ADAMAWA",
+            "Label": "AD",
             "Zone": "North East",
             "Description": null
         },
         {
-            "StateId": "6",
+            "StateId": "3",
             "RegionId": "5",
-            "Fullname": "BAYELSA",
-            "Label": "BY",
+            "Fullname": "AKWA IBOM",
+            "Label": "AK",
             "Zone": "South South",
             "Description": null
         },
-        {
-            "StateId": "7",
-            "RegionId": "1",
-            "Fullname": "BENUE",
-            "Label": "BE",
-            "Zone": "North Central",
-            "Description": null
-        },
-        {
-            "StateId": "8",
-            "RegionId": "2",
-            "Fullname": "BORNO",
-            "Label": "BO",
-            "Zone": "North East",
-            "Description": null
-        },
-        {
-            "StateId": "9",
-            "RegionId": "5",
-            "Fullname": "CROSS RIVER",
-            "Label": "CR",
-            "Zone": "South South",
-            "Description": null
-        },
-        {
-            "StateId": "10",
-            "RegionId": "5",
-            "Fullname": "DELTA",
-            "Label": "DE",
-            "Zone": "South South",
-            "Description": null
-        },
-        {
-            "StateId": "11",
-            "RegionId": "4",
-            "Fullname": "EBONYI",
-            "Label": "EB",
-            "Zone": "South East",
-            "Description": null
-        },
-        {
-            "StateId": "12",
-            "RegionId": "5",
-            "Fullname": "EDO",
-            "Label": "ED",
-            "Zone": "South South",
-            "Description": null
-        },
-        {
-            "StateId": "13",
-            "RegionId": "6",
-            "Fullname": "EKITI",
-            "Label": "EK",
-            "Zone": "South West",
-            "Description": null
-        },
-        {
-            "StateId": "14",
-            "RegionId": "4",
-            "Fullname": "ENUGU",
-            "Label": "EN",
-            "Zone": "South East",
-            "Description": null
-        },
-        {
-            "StateId": "15",
-            "RegionId": "1",
-            "Fullname": "FCT",
-            "Label": "FC",
-            "Zone": "North Central",
-            "Description": null
-        },
-        {
-            "StateId": "16",
-            "RegionId": "2",
-            "Fullname": "GOMBE",
-            "Label": "GO",
-            "Zone": "North East",
-            "Description": null
-        },
-        {
-            "StateId": "17",
-            "RegionId": "4",
-            "Fullname": "IMO",
-            "Label": "IM",
-            "Zone": "South East",
-            "Description": null
-        },
-        {
-            "StateId": "18",
-            "RegionId": "3",
-            "Fullname": "JIGAWA",
-            "Label": "JI",
-            "Zone": "North West",
-            "Description": null
-        },
-        {
-            "StateId": "19",
-            "RegionId": "3",
-            "Fullname": "KADUNA",
-            "Label": "KD",
-            "Zone": "North West",
-            "Description": null
-        },
-        {
-            "StateId": "20",
-            "RegionId": "3",
-            "Fullname": "KANO",
-            "Label": "KN",
-            "Zone": "North West",
-            "Description": null
-        },
-        {
-            "StateId": "21",
-            "RegionId": "3",
-            "Fullname": "KATSINA",
-            "Label": "KT",
-            "Zone": "North West",
-            "Description": null
-        },
+      
+      
     ]
