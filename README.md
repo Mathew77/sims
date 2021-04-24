@@ -93,3 +93,188 @@ RESPONSE :
             "Description": null
         },
     ]
+
+
+8. GET LIST OF LGS  BY USER ID and STATE ID
+
+POST : http://simis.cleavey.com.ng/api/v1/lga
+REQUEST BODY :
+{
+    "user_id": "admin",  
+    "state_id": 2
+}
+```
+
+RESPONSE :
+
+"status": 200,
+    "data": [
+         {
+            "StateId": "1",
+            "RegionId": "4",
+            "Fullname": "ABIA",
+            "Label": "AB",
+            "Zone": "South East",
+            "Description": null
+        },
+        {
+            "StateId": "2",
+            "RegionId": "2",
+            "Fullname": "ADAMAWA",
+            "Label": "AD",
+            "Zone": "North East",
+            "Description": null
+        },
+        {
+            "StateId": "3",
+            "RegionId": "5",
+            "Fullname": "AKWA IBOM",
+            "Label": "AK",
+            "Zone": "South South",
+            "Description": null
+        },
+        {
+            "StateId": "4",
+            "RegionId": "4",
+            "Fullname": "ANAMBRA",
+            "Label": "AN",
+            "Zone": "South East",
+            "Description": null
+        },
+        {
+            "StateId": "5",
+            "RegionId": "2",
+            "Fullname": "BAUCHI",
+            "Label": "BA",
+            "Zone": "North East",
+            "Description": null
+        },
+        {
+            "StateId": "6",
+            "RegionId": "5",
+            "Fullname": "BAYELSA",
+            "Label": "BY",
+            "Zone": "South South",
+            "Description": null
+        },
+        {
+            "StateId": "7",
+            "RegionId": "1",
+            "Fullname": "BENUE",
+            "Label": "BE",
+            "Zone": "North Central",
+            "Description": null
+        },
+        {
+            "StateId": "8",
+            "RegionId": "2",
+            "Fullname": "BORNO",
+            "Label": "BO",
+            "Zone": "North East",
+            "Description": null
+        },
+        {
+            "StateId": "9",
+            "RegionId": "5",
+            "Fullname": "CROSS RIVER",
+            "Label": "CR",
+            "Zone": "South South",
+            "Description": null
+        },
+        {
+            "StateId": "10",
+            "RegionId": "5",
+            "Fullname": "DELTA",
+            "Label": "DE",
+            "Zone": "South South",
+            "Description": null
+        },
+        {
+            "StateId": "11",
+            "RegionId": "4",
+            "Fullname": "EBONYI",
+            "Label": "EB",
+            "Zone": "South East",
+            "Description": null
+        },
+        {
+            "StateId": "12",
+            "RegionId": "5",
+            "Fullname": "EDO",
+            "Label": "ED",
+            "Zone": "South South",
+            "Description": null
+        },
+        {
+            "StateId": "13",
+            "RegionId": "6",
+            "Fullname": "EKITI",
+            "Label": "EK",
+            "Zone": "South West",
+            "Description": null
+        },
+        {
+            "StateId": "14",
+            "RegionId": "4",
+            "Fullname": "ENUGU",
+            "Label": "EN",
+            "Zone": "South East",
+            "Description": null
+        },
+        {
+            "StateId": "15",
+            "RegionId": "1",
+            "Fullname": "FCT",
+            "Label": "FC",
+            "Zone": "North Central",
+            "Description": null
+        },
+        {
+            "StateId": "16",
+            "RegionId": "2",
+            "Fullname": "GOMBE",
+            "Label": "GO",
+            "Zone": "North East",
+            "Description": null
+        },
+        {
+            "StateId": "17",
+            "RegionId": "4",
+            "Fullname": "IMO",
+            "Label": "IM",
+            "Zone": "South East",
+            "Description": null
+        },
+        {
+            "StateId": "18",
+            "RegionId": "3",
+            "Fullname": "JIGAWA",
+            "Label": "JI",
+            "Zone": "North West",
+            "Description": null
+        },
+        {
+            "StateId": "19",
+            "RegionId": "3",
+            "Fullname": "KADUNA",
+            "Label": "KD",
+            "Zone": "North West",
+            "Description": null
+        },
+        {
+            "StateId": "20",
+            "RegionId": "3",
+            "Fullname": "KANO",
+            "Label": "KN",
+            "Zone": "North West",
+            "Description": null
+        },
+        {
+            "StateId": "21",
+            "RegionId": "3",
+            "Fullname": "KATSINA",
+            "Label": "KT",
+            "Zone": "North West",
+            "Description": null
+        },
+    ]
