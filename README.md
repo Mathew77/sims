@@ -242,7 +242,9 @@ RESPONSE :
     ]
 
 
+11.  GET LIST OF  PROGRAMMES 
 
+   GET :      localhost/sim/api/v1/programmes
  
     
 

@@ -3,7 +3,7 @@
 
     use Exception;
     use App\UserModel;
-    use App\ProgrammesModal;  
+    use App\ProgrammesModel;  
 
     class ProgrammesController extends Controller {
         
@@ -16,7 +16,7 @@
 
             try {
                //Get ALL PROGRAMMES
-                $Programmes = new ProgrammesModal();
+                $Programmes = new ProgrammesModel();
                 $ProgrammesDetails = $Programmes->allProgrammes();
 
                 if ($ProgrammesDetails['status']) {

@@ -2,7 +2,7 @@
     namespace App;
     use App\Model;
 
-    class ProgrammesModal extends Model {
+    class ProgrammesModel extends Model {
 
 
         public function allProgrammes()
