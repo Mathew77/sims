@@ -6,6 +6,7 @@
     use App\PeriodController;
     use App\SummaryController;
     use App\StateController;
+    use App\ProgrammesController;
 
     $base  = dirname($_SERVER['PHP_SELF']);
 
@@ -36,7 +37,8 @@
     $Klein->respond('GET', '/api/v1/sfp-summary', [ new SummaryController(), 'fetch_sfp_summary' ]); // Fetch cct Summary Detail 
     $Klein->respond('GET', '/api/v1/state', [ new StateController(), 'fetch_state' ]); // Fetch State BY User ID
     $Klein->respond('GET', '/api/v1/lga', [ new StateController(), 'fetch_lga' ]); // Fetch Lga BY User ID
-   
+    $Klein->respond('GET', '/api/v1/programmes', [ new ProgrammesController(), 'fetch_programmes' ]); // Fetch Lga BY User ID
+
     // Dispatch all routes....
     $Klein->dispatch();
 

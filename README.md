@@ -189,3 +189,61 @@ RESPONSE :
       
       
     ]
+
+
+
+  8. GET LIST OF BENEFICIARY PER PROGRAMM 
+
+POST : http://simis.cleavey.com.ng/api/v1/cct-summary  
+
+        http://simis.cleavey.com.ng/api/v1/gee-summary
+
+        http://simis.cleavey.com.ng/api/v1/npo-summary
+
+        http://simis.cleavey.com.ng/api/v1/sfp-summary
+
+REQUEST BODY :
+{
+    "period": 3,  
+    "state_id": 2
+}
+```
+
+RESPONSE :
+
+"status": 200,
+    "data": [
+         {
+            "StateId": "1",
+            "RegionId": "4",
+            "Fullname": "ABIA",
+            "Label": "AB",
+            "Zone": "South East",
+            "Description": null
+        },
+        {
+            "StateId": "2",
+            "RegionId": "2",
+            "Fullname": "ADAMAWA",
+            "Label": "AD",
+            "Zone": "North East",
+            "Description": null
+        },
+        {
+            "StateId": "3",
+            "RegionId": "5",
+            "Fullname": "AKWA IBOM",
+            "Label": "AK",
+            "Zone": "South South",
+            "Description": null
+        },
+      
+      
+    ]
+
+
+
+ 
+    
+
+

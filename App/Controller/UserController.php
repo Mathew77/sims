@@ -171,13 +171,14 @@
                         //check user Privilege
                         $UserData['data']['userid'];
                         $UserPrivilegeModel2 = new PrivilegeModel();
+                       
                         $UserDataPrivileges = $UserPrivilegeModel2->fetchUserPrivilegeById($UserData['data']['userid']);
                         $UserData['data']['privilege'] = $UserDataPrivileges;
                         // Return Response............
                         $Response['status'] = 201;
                         $Response['message'] = 'Login Successful';
                         $Response['data'] = $UserData;
-
+                        
                         $response->code(201)->json($Response);
                         return;
                     }
