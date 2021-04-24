@@ -108,7 +108,8 @@ POST : http://simis.cleavey.com.ng/api/v1/lga
 REQUEST BODY :
 {
     "user_id": 2,
-    "lga"  : "Aba North, Aba South, Arochukwu,Demsa" 
+    "lga"  : "Aba North, Aba South, Arochukwu,Demsa" ,
+    "state_id" : 2
 }
 ```
 

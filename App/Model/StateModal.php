@@ -43,7 +43,7 @@
             if($user_id=="admin"){
                  $myQuery = "SELECT * FROM `ms_lga` ";
             }else{
-                $myQuery = "SELECT * FROM `ms_lga` WHERE StateId=$state_id AND Fullname IN ($StringData) ";
+                 $myQuery = "SELECT * FROM `ms_lga` WHERE StateId=$state_id AND Fullname IN ($StringData) ";
             }
            
             
