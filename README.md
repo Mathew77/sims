@@ -79,9 +79,12 @@ GET : http://simis.cleavey.com.ng/api/v1/sfp-period
 POST : http://simis.cleavey.com.ng/api/v1/state
 REQUEST BODY :
 
-{
-    "user_id": "admin"  
+
+ {
+    "user_id": 2,
+    "user_state"  : "abia,adamawa,sokoto,jos" 
 }
+
 ```
 
 RESPONSE :
@@ -143,7 +146,7 @@ RESPONSE :
 
 8. GET FOR SUMMARY VIEW 
 
-POST : http://simis.cleavey.com.ng/api/v1/cct-summary  
+GET : http://simis.cleavey.com.ng/api/v1/cct-summary  
 
         http://simis.cleavey.com.ng/api/v1/gee-summary
 

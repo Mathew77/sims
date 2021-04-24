@@ -1,17 +1,21 @@
 <?php
     namespace App;
     use App\Model;
+    
+    
 
     class StateModal extends Model {
 
 
-        public function State($user_id)
+        public function State($user_id, $user_state)
         {
            
+             $StringData = Parent::SeperateToString($user_state);
+
             if($user_id=="admin"){
-                echo $myQuery = "SELECT * FROM `ms_state`";
+               $myQuery = "SELECT * FROM `ms_state`";
             }else{
-                echo $myQuery = "";
+                $myQuery = "SELECT * FROM `ms_state` WHERE  Fullname IN ($StringData)";
             }
            
             

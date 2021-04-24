@@ -18,11 +18,13 @@
              // Trim the response 
              $payload = array(
                 'user_id' => $data->user_id,
+                'user_state' => $data->user_state,
+
             );
             try {
-               //Get CCT PERIOD
+               // $user_states
                 $States = new StateModal();
-                $stateDetail = $States->State($payload['user_id']);
+                $stateDetail = $States->State($payload['user_id'], $payload['user_state']);
 
                 if ($stateDetail['status']) {
                     $Response['status'] = 200;
