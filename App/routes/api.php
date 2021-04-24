@@ -36,6 +36,7 @@
     $Klein->respond('GET', '/api/v1/cct-summary', [ new SummaryController(), 'fetch_cct_summary' ]); // Fetch cct Summary Detail 
     $Klein->respond('GET', '/api/v1/cct-summary', [ new SummaryController(), 'fetch_cct_summary' ]); // Fetch cct Summary Detail 
     $Klein->respond('GET', '/api/v1/state', [ new StateController(), 'fetch_state' ]); // Fetch State BY User ID
+    $Klein->respond('GET', '/api/v1/lga', [ new StateController(), 'fetch_lga' ]); // Fetch Lga BY User ID
    
     // Dispatch all routes....
     $Klein->dispatch();
