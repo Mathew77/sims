@@ -36,13 +36,14 @@
             );
         }
 
-        public function Lga($user_id, $state_id)
+        public function Lga($user_id, $user_lga, $state_id)
         {
            
+            $StringData = Parent::SeperateToString($user_lga);
             if($user_id=="admin"){
-                echo $myQuery = "SELECT * FROM `ms_lga` ";
+                 $myQuery = "SELECT * FROM `ms_lga` ";
             }else{
-                echo $myQuery = "SELECT * FROM `ms_lga` WHERE `StateId` = 2";
+                $myQuery = "SELECT * FROM `ms_lga` WHERE StateId=$state_id AND Fullname IN ($StringData) ";
             }
            
             

@@ -59,12 +59,13 @@
              // Trim the response 
              $payload = array(
                 'user_id' => $data->user_id,
+                'lga' => $data->lga,
                 'state_id' => $data->state_id,
             );
             try {
 
                 $States = new StateModal();
-                $stateDetail = $States->State($payload['user_id'], $payload['state_id']);
+                $stateDetail = $States->Lga($payload['user_id'], $payload['lga'], $payload['state_id']);
                 if ($stateDetail['status']) {
                     $Response['status'] = 200;
                     $Response['data'] = $stateDetail['data'];
