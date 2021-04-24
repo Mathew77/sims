@@ -1,0 +1,8 @@
+# php -- BEGIN cPanel-generated handler, do not edit
+
+
+# php -- END cPanel-generated handler, do not edit
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]

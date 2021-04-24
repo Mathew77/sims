@@ -70,4 +70,26 @@ By default, these are the list of endpoints available when you clone the project
     $Klein->respond('GET', '/api/v1/sfp-period', [ new PrivilegeController(), 'fetch_sfp_period' ]);
 
 
+8. GET LIST OF STATE BY USER ID
+
+POST : http://simis.cleavey.com.ng/api/v1/state
+REQUEST BODY :
+
+{
+    "user_id": "admin"  
+}
 ```
+
+RESPONSE :
+
+"status": 200,
+    "data": [
+        {
+            "StateId": "1",
+            "RegionId": "4",
+            "Fullname": "ABIA",
+            "Label": "AB",
+            "Zone": "South East",
+            "Description": null
+        },
+    ]

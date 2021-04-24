@@ -118,7 +118,7 @@
                         $checkProduct = $ProductModel::findProductById((int) $payload->data);
 
                         if (!$checkProduct['status']) {
-                            array_push($response, [
+                            array_push($response, [ 
                                 'key' => $payload->key,
                                 'message' => "Sorry, The product with this ID could not be found in our database."
                             ]);

@@ -14,6 +14,7 @@
          */
         public function __construct()
         {
+          
           Self::$Request = isset($_SERVER['CONTENT_TYPE']) ? $_SERVER['CONTENT_TYPE'] : '';
           return;
         }

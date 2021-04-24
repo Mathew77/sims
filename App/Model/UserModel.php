@@ -82,6 +82,7 @@
          */
         public static function checkLoginId($loginid)
         {
+            
             $Sql = "SELECT * FROM `sys_user_info` WHERE loginid = :loginid";
             Parent::query($Sql);
             // Bind Params...
