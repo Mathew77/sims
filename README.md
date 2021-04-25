@@ -147,7 +147,7 @@ RESPONSE :
 
 8. GET FOR SUMMARY VIEW 
 
-GET : http://simis.cleavey.com.ng/api/v1/cct-summary  
+POST : http://simis.cleavey.com.ng/api/v1/cct-summary  
 
         http://simis.cleavey.com.ng/api/v1/gee-summary
 
@@ -251,5 +251,23 @@ RESPONSE :
    GET :      localhost/sim/api/v1/programmes
  
     
+12. GET list of Beneficiary base on program type 
 
+```
+    POST : localhost/sim/api/v1/beneficiaries
+#
+```
+REQUEST: 
+    { 
+    "state_id": 1, 
+    "lga_id" : 1,
+    "programme_type" : "gee"
+ }
+```
+RESPONSE :
+    { 
+    "state_id": 1, 
+    "lga_id" : 1,
+    "programme_type" : "gee"
+ }
 

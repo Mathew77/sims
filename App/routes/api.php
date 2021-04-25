@@ -7,6 +7,7 @@
     use App\SummaryController;
     use App\StateController;
     use App\ProgrammesController;
+    use App\BeneficiaryController;
 
     $base  = dirname($_SERVER['PHP_SELF']);
 
@@ -31,14 +32,14 @@
     $Klein->respond('GET', '/api/v1/gee-period', [ new PeriodController(), 'fetch_gee_period' ]); // Fetch Gee Period
     $Klein->respond('GET', '/api/v1/npo-period', [ new PeriodController(), 'fetch_npo_period' ]); // Fetch Npo Period
     $Klein->respond('GET', '/api/v1/sfp-period', [ new PeriodController(), 'fetch_sfp_period' ]); // Fetch Sfp Period
-    $Klein->respond('GET', '/api/v1/cct-summary', [ new SummaryController(), 'fetch_cct_summary' ]); // Fetch cct Summary Detail 
-    $Klein->respond('GET', '/api/v1/gee-summary', [ new SummaryController(), 'fetch_gee_summary' ]); // Fetch cct Summary Detail 
-    $Klein->respond('GET', '/api/v1/npo-summary', [ new SummaryController(), 'fetch_npo_summary' ]); // Fetch cct Summary Detail 
-    $Klein->respond('GET', '/api/v1/sfp-summary', [ new SummaryController(), 'fetch_sfp_summary' ]); // Fetch cct Summary Detail 
-    $Klein->respond('GET', '/api/v1/state', [ new StateController(), 'fetch_state' ]); // Fetch State BY User ID
-    $Klein->respond('GET', '/api/v1/lga', [ new StateController(), 'fetch_lga' ]); // Fetch Lga BY User ID
-    $Klein->respond('GET', '/api/v1/programmes', [ new ProgrammesController(), 'fetch_programmes' ]); // Fetch Lga BY User ID
-
+    $Klein->respond('POST', '/api/v1/cct-summary', [ new SummaryController(), 'fetch_cct_summary' ]); // Fetch cct Summary Detail 
+    $Klein->respond('POST', '/api/v1/gee-summary', [ new SummaryController(), 'fetch_gee_summary' ]); // Fetch cct Summary Detail 
+    $Klein->respond('POST', '/api/v1/npo-summary', [ new SummaryController(), 'fetch_npo_summary' ]); // Fetch cct Summary Detail 
+    $Klein->respond('POST', '/api/v1/sfp-summary', [ new SummaryController(), 'fetch_sfp_summary' ]); // Fetch cct Summary Detail 
+    $Klein->respond('POST', '/api/v1/state', [ new StateController(), 'fetch_state' ]); // Fetch State BY User ID
+    $Klein->respond('POST', '/api/v1/lga', [ new StateController(), 'fetch_lga' ]); // Fetch Lga BY User ID
+    $Klein->respond('POST', '/api/v1/programmes', [ new ProgrammesController(), 'fetch_programmes' ]); // Fetch Lga BY User ID
+    $Klein->respond('POST', '/api/v1/beneficiaries', [ new BeneficiaryController(), 'fetch_beneficiary' ]); // Fetch Lga BY User ID
     // Dispatch all routes....
     $Klein->dispatch();
 

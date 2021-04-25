@@ -15,13 +15,11 @@
 
             $data = json_decode($request->body());
              // Trim the response 
-             $payload = array(
-                'program' => $data->program,
-            );
+          
             try {
                //Get CCT PERIOD
                 $PeriodModal2 = new PeriodModal();
-                $ProgramPeriod = $PeriodModal2->cctPeriod($payload['program']);
+                $ProgramPeriod = $PeriodModal2->cctPeriod();
 
                 if ($ProgramPeriod['status']) {
                     $Response['status'] = 200;
@@ -53,14 +51,11 @@
             $Response = [];
 
             $data = json_decode($request->body());
-             // Trim the response 
-             $payload = array(
-                'program' => $data->program,
-            );
+           
             try {
                //Get CCT PERIOD
                 $PeriodModal2 = new PeriodModal();
-                $ProgramPeriod = $PeriodModal2->geePeriod($payload['program']);
+                $ProgramPeriod = $PeriodModal2->geePeriod();
 
                 if ($ProgramPeriod['status']) {
                     $Response['status'] = 200;
@@ -92,14 +87,11 @@
             $Response = [];
 
             $data = json_decode($request->body());
-             // Trim the response 
-             $payload = array(
-                'program' => $data->program,
-            );
+           
             try {
                //Get CCT PERIOD
                 $PeriodModal2 = new PeriodModal();
-                $ProgramPeriod = $PeriodModal2->npoPeriod($payload['program']);
+                $ProgramPeriod = $PeriodModal2->npoPeriod();
 
                 if ($ProgramPeriod['status']) {
                     $Response['status'] = 200;
@@ -131,14 +123,11 @@
             $Response = [];
 
             $data = json_decode($request->body());
-             // Trim the response 
-             $payload = array(
-                'program' => $data->program,
-            );
+           
             try {
                //Get CCT PERIOD
                 $PeriodModal2 = new PeriodModal();
-                $ProgramPeriod = $PeriodModal2->sfpPeriod($payload['program']);
+                $ProgramPeriod = $PeriodModal2->sfpPeriod();
 
                 if ($ProgramPeriod['status']) {
                     $Response['status'] = 200;
