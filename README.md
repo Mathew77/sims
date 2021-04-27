@@ -248,7 +248,14 @@ RESPONSE :
 
 11.  GET LIST OF  PROGRAMMES 
 
-   GET :      localhost/sim/api/v1/programmes
+   POST :      localhost/sim/api/v1/programmes
+   ```
+   REQUEST BODY :
+{
+    "user_id": 3,  
+    "programmes": "cct, geep, nhgsfp, npower"
+}
+```
  
     
 12. GET list of Beneficiary base on program type 
@@ -265,9 +272,30 @@ REQUEST:
  }
 ```
 RESPONSE :
-    { 
-    "state_id": 1, 
-    "lga_id" : 1,
-    "programme_type" : "gee"
- }
-
+   {
+    "status": 200,
+    "data": [
+        {
+            "beneficiaryid": "1",
+            "stateid": "1",
+            "lgaid": "1",
+            "ward": "",
+            "batch": "Jan/Feb 2021",
+            "geep_id": "BI/001/92929",
+            "first": "James",
+            "middle": "Kingsley",
+            "last": "Ndidi",
+            "gender": "Male",
+            "phone": "08083838383",
+            "start_date": "1970-01-01",
+            "end_date": "1970-01-01",
+            "primary_assignment": null,
+            "qualification": "",
+            "address": "",
+            "biz_type": "Commercial Driver",
+            "active": "1"
+        },
+      
+    ],
+    "message": ""
+}

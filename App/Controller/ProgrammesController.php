@@ -13,11 +13,17 @@
         {
             $Response = [];
 
-
+            $data = json_decode($request->body());
+             // Trim the response 
+             $payload = array(
+                'user_id' => $data->user_id,
+                'programmes' => $data->programmes,
+            );
+            
             try {
                //Get ALL PROGRAMMES
                 $Programmes = new ProgrammesModel();
-                $ProgrammesDetails = $Programmes->allProgrammes();
+                $ProgrammesDetails = $Programmes->allProgrammes($payload['user_id'], $payload['programmes']);
 
                 if ($ProgrammesDetails['status']) {
                     $Response['status'] = 200;

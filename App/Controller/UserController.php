@@ -174,13 +174,16 @@
                        
                         $UserDataPrivileges = $UserPrivilegeModel2->fetchUserPrivilegeById($UserData['data']['userid']);
                         $UserData['data']['privilege'] = $UserDataPrivileges;
-                        // Return Response............
+                     
+                            // Return Response............
                         $Response['status'] = 201;
                         $Response['message'] = 'Login Successful';
                         $Response['data'] = $UserData;
                         
                         $response->code(201)->json($Response);
                         return;
+                        
+                        
                     }
 
                     $Response['status'] = 401;

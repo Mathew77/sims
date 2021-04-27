@@ -12,7 +12,7 @@
            
              $StringData = Parent::SeperateToString($user_state);
 
-            if($user_id=="admin"){
+            if($user_state=="admin"){
                $myQuery = "SELECT * FROM `ms_state`";
             }else{
                 $myQuery = "SELECT * FROM `ms_state` WHERE  Fullname IN ($StringData)";
@@ -40,7 +40,7 @@
         {
            
             $StringData = Parent::SeperateToString($user_lga);
-            if($user_id=="admin"){
+            if($user_lga=="admin"){
                  $myQuery = "SELECT * FROM `ms_lga` ";
             }else{
                  $myQuery = "SELECT * FROM `ms_lga` WHERE StateId=$state_id AND Fullname IN ($StringData) ";
