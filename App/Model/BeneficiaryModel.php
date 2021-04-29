@@ -13,9 +13,9 @@
              //$StringData = Parent::SeperateToString($user_state);
             if($programme_type=="cct"){  
                 $myQuery = "SELECT * FROM `cct_ms_beneficiary` WHERE `lgaid`=$lga_id AND `stateid`=$state_id";
-            }elseif($programme_type=="gee"){
+            }elseif($programme_type=="geep"){
                 $myQuery = "SELECT * FROM `gee_ms_beneficiary` WHERE `lgaid`=$lga_id AND `stateid`=$state_id";
-            }elseif($programme_type=="npo"){
+            }elseif($programme_type=="npower"){
                 $myQuery = "SELECT * FROM `npo_ms_beneficiary` WHERE `lgaid`=$lga_id AND `stateid`=$state_id";
             }elseif($programme_type=="sfp"){
                 $myQuery = "SELECT * FROM `sfp_ms_beneficiary` WHERE `lgaid`=$lga_id AND `stateid`=$state_id";

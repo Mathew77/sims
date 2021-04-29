@@ -82,9 +82,9 @@
                     $TokenModel = new TokenModel();
                     // Check the database for the query before decoding it...
                    
-                    $tokenDB = $TokenModel->fetchToken($token);
+                    //u$tokenDB = $TokenModel->fetchToken($token);
                     
-                    if ($tokenDB['status']) {
+                    //if ($tokenDB['status']) {
                         // decode the token and pass the result on to the controller....
                         $decodedToken = (Array) JWT::decode($token, Self::JWTSecret(), array('HS256'));
                         if (isset($decodedToken['user_id'])) {
@@ -93,8 +93,8 @@
                         }
 
                         return false;
-                    }
-                    return false;
+                   // }
+                   // return false;
                 }
 
                 return false;

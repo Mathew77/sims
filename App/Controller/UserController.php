@@ -162,11 +162,11 @@
                         );
                         $Jwt = JWT::encode($tokenPayload, $tokenSecret);
                         // Save JWT Token...
-                        $TokenModel = new TokenModel();
-                        $TokenModel->createToken([
-                            'user_id' => $UserData['data']['userid'],
-                            'jwt_token'=> $Jwt
-                        ]);
+                        // $TokenModel = new TokenModel();
+                        // $TokenModel->createToken([
+                        //     'user_id' => $UserData['data']['userid'],
+                        //     'jwt_token'=> $Jwt
+                        // ]);
                         $UserData['data']['token'] = $Jwt;
                         //check user Privilege
                         $UserData['data']['userid'];

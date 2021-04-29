@@ -14,10 +14,12 @@
             $Response = [];
 
             $data = json_decode($request->body());
-             // Trim the response 
+             // Trim the response $user_id, $user_lga
              $payload = array(
                 'state_id' => $data->state_id,
                 'period' => $data->period,
+                'user_id' => $data->user_id,
+                'user_lga' => $data->user_lga,
             );
             
             try {
@@ -59,15 +61,18 @@
              $payload = array(
                 'state_id' => $data->state_id,
                 'period' => $data->period,
+                'user_id' => $data->user_id,
+                'user_lga' => $data->user_lga
             );
+            
             try {
                //Get CCT PERIOD
-                $PeriodModal2 = new PeriodModal();
-                $ProgramPeriod = $PeriodModal2->geePeriod($payload['state_id'], $payload['period']);
+                $Summary = new SummaryModal();
+                $SummaryDetail = $Summary->geeSummary($payload['state_id'], $payload['period'],$payload['user_id'], $payload['user_lga']);
 
-                if ($ProgramPeriod['status']) {
+                if ($SummaryDetail['status']) {
                     $Response['status'] = 200;
-                    $Response['data'] = $ProgramPeriod['data'];
+                    $Response['data'] = $SummaryDetail['data'];
                     $Response['message'] = '';
 
                     $response->code(200)->json($Response);
@@ -99,15 +104,18 @@
              $payload = array(
                 'state_id' => $data->state_id,
                 'period' => $data->period,
+                'user_id' => $data->user_id,
+                'user_lga' => $data->user_lga
             );
+            
             try {
                //Get CCT PERIOD
-                $PeriodModal2 = new PeriodModal();
-                $ProgramPeriod = $PeriodModal2->npoPeriod($payload['state_id'], $payload['period']);
+                $Summary = new SummaryModal();
+                $SummaryDetail = $Summary->npoSummary($payload['state_id'], $payload['period'],$payload['user_id'], $payload['user_lga']);
 
-                if ($ProgramPeriod['status']) {
+                if ($SummaryDetail['status']) {
                     $Response['status'] = 200;
-                    $Response['data'] = $ProgramPeriod['data'];
+                    $Response['data'] = $SummaryDetail['data'];
                     $Response['message'] = '';
 
                     $response->code(200)->json($Response);
@@ -139,26 +147,29 @@
              $payload = array(
                 'state_id' => $data->state_id,
                 'period' => $data->period,
+                'user_id' => $data->user_id,
+                'user_lga' => $data->user_lga
             );
+            
             try {
                //Get CCT PERIOD
-                $PeriodModal2 = new PeriodModal();
-                $ProgramPeriod = $PeriodModal2->sfpPeriod($payload['state_id'], $payload['period']);
+                $Summary = new SummaryModal();
+                $SummaryDetail = $Summary->sfpSummary($payload['state_id'], $payload['period'],$payload['user_id'], $payload['user_lga']);
 
-                if ($ProgramPeriod['status']) {
+                if ($SummaryDetail['status']) {
                     $Response['status'] = 200;
-                    $Response['data'] = $ProgramPeriod['data'];
+                    $Response['data'] = $SummaryDetail['data'];
                     $Response['message'] = '';
 
                     $response->code(200)->json($Response);
                     return;
                 }
 
-                $Response['status'] = 400;
+                $Response['status'] = 200;
                 $Response['data'] = [];
-                $Response['message'] = 'An unexpected error occurred and your User Priviledges could not be retrieved. Please, try again later.';
+                $Response['message'] = 'No record found. Please, try again later.';
                 
-                $response->code(400)->json($Response);
+                $response->code(200)->json($Response);
                 return;
             } catch (Exception $e) {
                 $Response['status'] = 500;
