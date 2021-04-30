@@ -25,7 +25,7 @@
             try {
                //Get CCT PERIOD
                 $Summary = new SummaryModal();
-                $SummaryDetail = $Summary->cctSummary($payload['state_id'], $payload['period']);
+                $SummaryDetail = $Summary->cctSummary($payload['state_id'], $payload['period'],$payload['user_id'], $payload['user_lga']);
 
                 if ($SummaryDetail['status']) {
                     $Response['status'] = 200;

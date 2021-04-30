@@ -16,8 +16,8 @@
             }elseif($programme_type=="geep"){
                 $myQuery = "SELECT * FROM `gee_ms_beneficiary` WHERE `lgaid`=$lga_id AND `stateid`=$state_id";
             }elseif($programme_type=="npower"){
-                $myQuery = "SELECT * FROM `npo_ms_beneficiary` WHERE `lgaid`=$lga_id AND `stateid`=$state_id";
-            }elseif($programme_type=="sfp"){
+                 $myQuery = "SELECT * FROM `npo_ms_beneficiary` WHERE `lgaid`=$lga_id AND `stateid`=$state_id";
+            }elseif($programme_type=="nhgsfp"){
                 $myQuery = "SELECT * FROM `sfp_ms_beneficiary` WHERE `lgaid`=$lga_id AND `stateid`=$state_id";
             }else{
                 $myQuery =null;
