@@ -3,31 +3,14 @@
 
     use Exception;
     use App\CctModel;
-    use App\PrivilegeModel;
     use App\Controller;
-    use Firebase\JWT\JWT;
-    use App\TokenModel;
-    use App\RequestMiddleware;    
+    
 
     class CctController extends Controller {
         
         public function CreateCctCore($request, $response)
         {
             $Response = [];
-            $sapi_type = php_sapi_name();     
-            $Middleware = new RequestMiddleware();
-            $Middleware = $Middleware::acceptsJson();   
-
-            if (!$Middleware) {
-                array_push($Response, [
-                    'status' => 400,
-                    'message' => 'Sorry, Only JSON Contents are allowed to access this Endpoint.',
-                    'data' => []
-                ]);
-
-                $response->code(400)->json($Response);
-                return;
-            }
 
             $data = json_decode($request->body());                   
 
@@ -52,8 +35,7 @@
                 'children_immunized'=> $data->children_immunized ,
                 'remark'=> $data->remark ,
                 'created'=> $data->created,
-                //This is for the Core Transaction
-                'periodid' => $data->periodid,
+
                 'has_collected' => $data->has_collected,
                 'payment_date' => $data->payment_date,
                 'data_collected_date'=> $data->data_collected_date,
@@ -67,7 +49,9 @@
             try {
                 $CctModel = new CctModel();
                 $CctData = $CctModel::createCctCore($payload);
-                if ($CctData['status']) {
+                $CctPeriodicData = $CctModel::createCctCorePeriodic($payload);
+                
+                if ($CctData['status'] && $CctPeriodicData['status']) {
                     
                     // Initialize JWT Token....
                     $tokenExp = date('Y-m-d H:i:s');  
@@ -75,7 +59,7 @@
                     // Return Response............
                     $Response['status'] = 201;
                     $Response['message'] = '';
-                    $Response['data'] = $UserData;
+                    $Response['data'] = $CctData;
 
                     $response->code(201)->json($Response);
                     return;

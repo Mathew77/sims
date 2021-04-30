@@ -3,16 +3,9 @@
     use App\Model;
 
    
-    class UserModel extends Model {
+    class CctModel extends Model {
 
-         /**
-         * createUser
-         *
-         * creates a new User
-         *
-         * @param array $payload  Contains all the fields that will be created.
-         * @return array Anonymous
-         */
+
         public static function createCctCore($payload)
         {
            $Sql = "INSERT INTO `cct_tr_core` 
@@ -61,8 +54,6 @@
                         :created
                      )";
             Parent::query($Sql);
-            // Bind Params...
-     
             Parent::bindParams('beneficiaryid', $payload['beneficiaryid']);
             Parent::bindParams('periodid', $payload['periodid']);
             Parent::bindParams('collected_date', $payload['collected_date']);
@@ -84,9 +75,10 @@
             Parent::bindParams('remark', $payload['remark']);
             Parent::bindParams('created', $payload['created']);
 
-            $newCctCore = Parent::execute();
+            $newCctCore = Parent::execute();           
+           
             //print( $newCctCore);
-            if ($newCctCore) {
+            if ($newCctCore ) {
                 $cct_core_id = Parent::lastInsertedId();
                 $payload['cct_core_id'] = $cct_core_id;
                 $Response = array(
@@ -103,7 +95,70 @@
             return $Response;
         }
 
-        
+        public static function createCctCorePeriodic($payload)
+        {
+                      
+            //FOR CORE TRANSACTION PERIOD
+            $Sql = "INSERT INTO `cct_tr_periodic` 
+                    (
+                        beneficiaryid, 
+                        periodid,
+                        has_collected,
+                        payment_date,
+                        data_collected_date,
+                        amount_paid,
+                        total_amount,
+                        is_challenging,
+                        gps
+
+                    ) 
+                    
+                    VALUES
+                     (
+                        :beneficiaryid, 
+                        :periodid,
+                        :has_collected,
+                        :payment_date,
+                        :data_collected_date,
+                        :amount_paid,
+                        :total_amount,
+                        :is_challenging,
+                        :gps
+
+                     )";
+            Parent::query($Sql);
+            // Bind Params...
+                Parent::bindParams('beneficiaryid', $payload['beneficiaryid']);
+                Parent::bindParams('periodid', $payload['periodid']);
+                Parent::bindParams('has_collected', $payload['has_collected']);
+                Parent::bindParams('payment_date', $payload['payment_date']);
+                Parent::bindParams('data_collected_date', $payload['data_collected_date']);
+                Parent::bindParams('amount_paid', $payload['amount_paid']);
+                Parent::bindParams('total_amount', $payload['total_amount']);
+                Parent::bindParams('is_challenging', $payload['is_challenging']);
+                Parent::bindParams('gps', $payload['gps']);
+    
+                $newCctCorePeriod = Parent::execute();
+                var_dump($newCctCorePeriod);
+           
+            //print( $newCctCore);
+            if ( $newCctCorePeriod) {
+                $cct_core_id = Parent::lastInsertedId();
+                $payload['cct_core_id'] = $cct_core_id;
+                $Response = array(
+                    'status' => true,
+                    'data' => $payload
+                );
+                return $Response;
+            }
+
+            $Response = array(
+                'status' => false,
+                'data' => []
+            );
+            return $Response;
+        }
+
       
     }
 ?>

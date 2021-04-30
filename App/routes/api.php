@@ -41,7 +41,7 @@
     $Klein->respond('POST', '/api/v1/lga', [ new StateController(), 'fetch_lga' ]); // Fetch Lga BY User ID
     $Klein->respond('POST', '/api/v1/programmes', [ new ProgrammesController(), 'fetch_programmes' ]); // Fetch Lga BY User ID
     $Klein->respond('POST', '/api/v1/beneficiaries', [ new BeneficiaryController(), 'fetch_beneficiary' ]); // Fetch Lga BY User ID
-    $Klein->respond('POST', '/api/v1/create-cct-core', [ new CctController(), 'CreateCctCore' ]); // Fetch Lga BY User ID
+    $Klein->respond('POST', '/api/v1/cct', [ new CctController(), 'CreateCctCore' ]); // Fetch Lga BY User ID
 
     // Dispatch all routes....
     $Klein->dispatch();

@@ -253,3 +253,42 @@ RESPONSE :
     ],
     "message": ""
 }
+
+#
+13. CREATING CCT DATA ENTRY FORM 
+    ENDPOINT : localhost/sim/api/v1/cct
+
+CREATE CCT DATA ENTRY 
+
+```
+REQYEST BODY 
+
+{
+"beneficiaryid":"4" ,
+"periodid":"3",
+"collected_date":"",
+"is_disability":"6" ,
+"is_bank":"3" ,
+"bank_distance":"3",
+"is_bvn":"",
+"is_nin":"",
+"is_household_head":"",
+"income_source":"",
+"household_income_perday":"",
+"is_part_cooperative":"" ,
+"person_in_household":"",
+"dependant_below_18":"" ,
+"dependant_below_2":"",
+"dependent_in_school":"" ,
+"children_immunized":"" ,
+"remark":"",
+"created":"",
+"has_collected": 2,
+"payment_date": 2,
+"data_collected_date": 2,
+"amount_paid": 3555,
+"total_amount": 444,
+"is_challenging": 1,
+"gps": "5666,5555"
+}
+````
