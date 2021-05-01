@@ -292,3 +292,45 @@ REQYEST BODY
 "gps": "5666,5555"
 }
 ````
+#
+13. CREATING GEEP DATA ENTRY FORM 
+    ENDPOINT : localhost/sim/api/v1/geep
+
+CREATE GEEP DATA ENTRY 
+
+```
+REQYEST BODY 
+
+{
+{
+"beneficiaryid":"", 
+"periodid":"",
+"collected_date":"",
+"is_disability":"",
+"dependent_immunized":"",
+"is_dependent_below_2":"",
+"is_dependent_in_school":"",
+"dependent_below_2":"",
+"is_head_of_household":"",
+"is_dependent":"",
+"dependent_below_18":"",
+"is_disabled":"",
+"tax_amount":"",
+"frequency_of_tax":"",
+"is_tax_payer":"",
+"profit_plough_back":"",
+"has_paid_back":"",
+"repayment_due":"",
+"staff_employed_male":"",
+"staff_employed_female":"",
+"category_of_loan":"",
+"amount_received":"",
+"avg_daily_turnover":"",
+"avg_daily_expense":"",
+"avg_turnover_bfload":"",
+"remark":"",
+"created":"",
+"gps":""
+
+}
+````
