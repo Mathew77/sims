@@ -10,6 +10,7 @@
     use App\BeneficiaryController;
     use App\CctController;
     use App\GeepController;
+    use App\NpoController;
 
     $base  = dirname($_SERVER['PHP_SELF']);
 
@@ -43,8 +44,8 @@
     $Klein->respond('POST', '/api/v1/programmes', [ new ProgrammesController(), 'fetch_programmes' ]); // Fetch Lga BY User ID
     $Klein->respond('POST', '/api/v1/beneficiaries', [ new BeneficiaryController(), 'fetch_beneficiary' ]); // Fetch Lga BY User ID
     $Klein->respond('POST', '/api/v1/cct', [ new CctController(), 'CreateCctCore' ]); // Create CCT Core
-    $Klein->respond('POST', '/api/v1/geep', [ new GeepController(), 'CreateGeepCore' ]); // Create GEEP Core
-
+    $Klein->respond('POST', '/api/v1/geep', [ new GeepController(), 'CreateGeepCores' ]); // Create GEEP Core
+    $Klein->respond('POST', '/api/v1/npo', [ new NpoController(), 'CreateNpoCores' ]); // Create GEEP Core
     // Dispatch all routes....
     $Klein->dispatch();
 

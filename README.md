@@ -301,36 +301,59 @@ CREATE GEEP DATA ENTRY
 ```
 REQYEST BODY 
 
+
 {
-{
-"beneficiaryid":"", 
-"periodid":"",
+"beneficiaryid":"4" ,
+"periodid":"3",
 "collected_date":"",
-"is_disability":"",
-"dependent_immunized":"",
-"is_dependent_below_2":"",
-"is_dependent_in_school":"",
-"dependent_below_2":"",
-"is_head_of_household":"",
-"is_dependent":"",
-"dependent_below_18":"",
-"is_disabled":"",
-"tax_amount":"",
-"frequency_of_tax":"",
-"is_tax_payer":"",
-"profit_plough_back":"",
-"has_paid_back":"",
+"avg_daily_expense":"6" ,
+"avg_turnover_bfload":"3" ,
+"category_of_loan":"6" ,
+"avg_daily_turnover":"3" ,
+"amount_received":"3",
 "repayment_due":"",
-"staff_employed_male":"",
 "staff_employed_female":"",
-"category_of_loan":"",
-"amount_received":"",
-"avg_daily_turnover":"",
-"avg_daily_expense":"",
-"avg_turnover_bfload":"",
+"staff_employed_male":"",
+"has_paid_back":"",
+"profit_plough_back":"",
+"person_in_household":"" ,
+"is_tax_payer":"",
+"frequency_of_tax":"" ,
+"tax_amount":"",
+"is_head_of_household":"" ,
+"is_disabled":"" ,
 "remark":"",
 "created":"",
-"gps":""
-
+"is_dependent": 2,
+"dependent_below_18": 2,
+"dependent_below_2": 2,
+"is_dependent_in_school": 3555,
+"is_dependent_below_2": 444,
+"dependent_immunized": 1,
+"gps": "5666,5555"
 }
 ````
+###
+15. CREATING NPO DATA ENTRY FORM 
+    ENDPOINT : localhost/sim/api/v1/npo
+
+CREATE NPO DATA ENTRY 
+
+```
+REQUEST BODY 
+
+{
+"beneficiaryid":"4" ,
+"periodid":"3",
+"collected_date": "2021-04-04",
+"has_received_stipend":"3",
+"work_days_inperiod":"3",
+"total_work_days":"3",
+"absent_reason":"3",
+"has_gained_skill":"3",
+"has_commence_trade":"3",
+"plan_after":"3"
+}
+
+
+```

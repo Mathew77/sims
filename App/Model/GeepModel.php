@@ -6,14 +6,12 @@
     class GeepModel extends Model {
 
 
-        public static function createGeepCore($payload)
+        public static function createGeepCoreModel($payload)
         {
            $Sql = "INSERT INTO `gee_tr_core` 
                     (
                         beneficiaryid, 
                         periodid,
-                        collected_date,
-                        is_disability,
                         dependent_immunized,
                         is_dependent_below_2,
                         is_dependent_in_school,
@@ -46,8 +44,6 @@
                      (
                         :beneficiaryid, 
                         :periodid,
-                        :collected_date,
-                        :is_disability,
                         :dependent_immunized,
                         :is_dependent_below_2,
                         :is_dependent_in_school,
@@ -76,8 +72,6 @@
             Parent::query($Sql);
             Parent::bindParams('beneficiaryid', $payload['beneficiaryid']);
             Parent::bindParams('periodid', $payload['periodid']);
-            Parent::bindParams('collected_date', $payload['collected_date']);
-            Parent::bindParams('is_disability', $payload['is_disability']);
             Parent::bindParams('dependent_immunized', $payload['dependent_immunized']);
             Parent::bindParams('is_dependent_below_2', $payload['is_dependent_below_2']);
             Parent::bindParams('is_dependent_in_school', $payload['is_dependent_in_school']);
@@ -105,7 +99,7 @@
 
             Parent::bindParams('remark', $payload['remark']);
             Parent::bindParams('created', $payload['created']);
-
+            Parent::bindParams('gps', $payload['gps']);
             $newGeepCore = Parent::execute();           
            
             //print( $newCctCore);

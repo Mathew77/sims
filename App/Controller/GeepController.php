@@ -8,26 +8,26 @@
 
     class GeepController extends Controller {
         
-        public function CreateGeepCore($request, $response)
+        public function CreateGeepCores($request, $response)
         {
             $Response = [];
 
             $data = json_decode($request->body());                   
-
+            //var_dump( $data);
             // Trim the response and create the CCT Core and Transaction....
             $payload = array(
-                'beneficiaryid'=> $data->beneficiaryid ,
+                'beneficiaryid'=> $data->beneficiaryid,
                 'periodid'=> $data->periodid,
                 'created'=> $data->created,
                 'remark'=> $data->remark ,
-                'dependent_immunized'=> $data->dependent_immunized ,
+                'dependent_immunized'=> $data->dependent_immunized,
                 'is_dependent_below_2'=> $data->is_dependent_below_2,
                 'is_dependent_in_school' => $data->is_dependent_in_school,
-                'dependent_below_2'=> $data->dependent_below_2 ,
+                'dependent_below_2'=> $data->dependent_below_2,
                 'dependent_below_18'=> $data->dependent_below_18,
-                'is_dependent'=> $data->is_dependent ,
+                'is_dependent'=> $data->is_dependent,
+                'is_disabled' => $data->is_disabled,
                 'is_head_of_household' => $data->is_head_of_household,
-                'is_disabled'=> $data->is_disabled ,
                 'person_in_household' => $data->person_in_household,
                 'tax_amount'=> $data->tax_amount ,
                 'frequency_of_tax'=> $data->frequency_of_tax ,
@@ -49,7 +49,7 @@
 
             try {
                 $GeepModel = new GeepModel();
-                $GeepData = $GeepModel::createGeepCore($payload);
+                $GeepData = $GeepModel::createGeepCoreModel($payload);
                 
                 if ($GeepData['status'] ) {
                     
