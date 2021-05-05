@@ -307,7 +307,7 @@ REQYEST BODY
 "periodid":"3",
 "collected_date":"",
 "avg_daily_expense":"6" ,
-"avg_turnover_bfload":"3" ,
+"avg_turnover_bf_loan":"3" ,
 "category_of_loan":"6" ,
 "avg_daily_turnover":"3" ,
 "amount_received":"3",
