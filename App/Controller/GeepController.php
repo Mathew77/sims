@@ -41,7 +41,7 @@
                 'amount_received'=> $data->amount_received,
                 'avg_daily_turnover' => $data->avg_daily_turnover,
                 'avg_daily_expense' => $data->avg_daily_expense,
-                'avg_turnover_bfload' => $data->avg_turnover_bfload,
+                'avg_turnover_bf_loan' => $data->avg_turnover_bf_loan,
                 'gps' => $data->gps,
                 
 

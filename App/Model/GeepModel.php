@@ -32,7 +32,7 @@
                         amount_received,
                         avg_daily_turnover,
                         avg_daily_expense,
-                        avg_turnover_bfload,
+                        avg_turnover_bf_loan,
                         remark,
                         created,
                         gps
@@ -64,7 +64,7 @@
                         :amount_received,
                         :avg_daily_turnover,
                         :avg_daily_expense,
-                        :avg_turnover_bfload,
+                        :avg_turnover_bf_loan,
                         :remark,
                         :created,
                         :gps
@@ -95,7 +95,7 @@
             Parent::bindParams('amount_received', $payload['amount_received']);
             Parent::bindParams('avg_daily_turnover', $payload['avg_daily_turnover']);
             Parent::bindParams('avg_daily_expense', $payload['avg_daily_expense']);
-            Parent::bindParams('avg_turnover_bfload', $payload['avg_turnover_bfload']);
+            Parent::bindParams('avg_turnover_bf_loan', $payload['avg_turnover_bf_loan']);
 
             Parent::bindParams('remark', $payload['remark']);
             Parent::bindParams('created', $payload['created']);
