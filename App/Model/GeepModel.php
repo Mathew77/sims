@@ -8,6 +8,7 @@
 
         public static function createGeepCoreModel($payload)
         {
+          $current_date= Parent::getNowDbDate();
            $Sql = "INSERT INTO `gee_tr_core` 
                     (
                         beneficiaryid, 
@@ -35,8 +36,9 @@
                         avg_turnover_bf_loan,
                         remark,
                         created,
+                        updated,
                         gps,
-                        user_id
+                        userid
 
                     ) 
                     
@@ -67,8 +69,9 @@
                         :avg_turnover_bf_loan,
                         :remark,
                         :created,
+                        :updated,
                         :gps,
-                        :user_id
+                        :userid
                      )";
             Parent::query($Sql);
             Parent::bindParams('beneficiaryid', $payload['beneficiaryid']);
@@ -99,9 +102,11 @@
             Parent::bindParams('avg_turnover_bf_loan', $payload['avg_turnover_bf_loan']);
 
             Parent::bindParams('remark', $payload['remark']);
-            Parent::bindParams('created', $payload['created']);
+            Parent::bindParams('created', $current_date);
+            Parent::bindParams('updated', $updated);
+            
             Parent::bindParams('gps', $payload['gps']);
-            Parent::bindParams('user_id', $payload['user_id']);
+            Parent::bindParams('userid', $payload['user_id']);
             $newGeepCore = Parent::execute();           
            
             //print( $newCctCore);

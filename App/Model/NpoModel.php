@@ -8,6 +8,7 @@
 
         public static function createNpoCoreModel($payload)
         {
+            $current_date= Parent::getNowDbDate();
             $Sql = "INSERT INTO `npo_tr_core` 
                     (
                         beneficiaryid, 
@@ -20,7 +21,7 @@
                         has_gained_skill,
                         has_commence_trade,
                         plan_after,
-                        user_id
+                        userid
 
                     ) 
                     
@@ -36,14 +37,14 @@
                         :has_gained_skill,
                         :has_commence_trade,
                         :plan_after,
-                        :user_id
+                        :userid
 
                      )";
             $sqlquery = Parent::query($Sql);
                 
             Parent::bindParams('beneficiaryid', $payload['beneficiaryid']);
             Parent::bindParams('periodid', $payload['periodid']);
-            Parent::bindParams('collected_date', $payload['collected_date']);
+            Parent::bindParams('collected_date', $current_date);
             Parent::bindParams('has_received_stipend', $payload['has_received_stipend']);
             Parent::bindParams('work_days_inperiod', $payload['work_days_inperiod']);
             Parent::bindParams('total_work_days', $payload['total_work_days']);
@@ -51,7 +52,7 @@
             Parent::bindParams('has_gained_skill', $payload['has_gained_skill']);
             Parent::bindParams('has_commence_trade', $payload['has_commence_trade']);
             Parent::bindParams('plan_after', $payload['plan_after']);
-            Parent::bindParams('user_id', $payload['user_id']);
+            Parent::bindParams('userid', $payload['user_id']);
             $newNpoCore = Parent::execute();           
            
             //print( $newCctCore);

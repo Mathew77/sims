@@ -21,6 +21,8 @@
          * @param void
          * @return void
          */
+
+         
         public function __construct()
         {
             // Create a DSN...
@@ -141,6 +143,17 @@
         {
             return Self::$dbConn->lastInsertId();
         }
+
+        protected static function getNowDbDate()
+        {
+            date_default_timezone_set("Africa/Lagos");
+            return date('Y-m-d H:i:s', time());
+        }
+        //But before you use this function set Date and Time zone for correct date
+        /*
+        *      SET DATE AND TIME
+        */
+    
         
         public function SeperateToString($string, $delimeter=",", $quote="'")
             {
