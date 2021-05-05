@@ -26,6 +26,7 @@
                 'has_gained_skill'=> $data->has_gained_skill,
                 'has_commence_trade'=> $data->has_commence_trade,
                 'plan_after' => $data->plan_after,
+                'user_id' => $data->user_id,
 
             );
 

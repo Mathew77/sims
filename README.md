@@ -289,7 +289,8 @@ REQYEST BODY
 "amount_paid": 3555,
 "total_amount": 444,
 "is_challenging": 1,
-"gps": "5666,5555"
+"gps": "5666,5555",
+"user_id" : "1"
 }
 ````
 #
@@ -330,7 +331,8 @@ REQYEST BODY
 "is_dependent_in_school": 3555,
 "is_dependent_below_2": 444,
 "dependent_immunized": 1,
-"gps": "5666,5555"
+"gps": "5666,5555",
+"user_id" : "1"
 }
 ````
 ###
@@ -352,7 +354,8 @@ REQUEST BODY
 "absent_reason":"3",
 "has_gained_skill":"3",
 "has_commence_trade":"3",
-"plan_after":"3"
+"plan_after":"3",
+"user_id" : "1"
 }
 
 

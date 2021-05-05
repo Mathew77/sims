@@ -19,7 +19,8 @@
                         absent_reason,
                         has_gained_skill,
                         has_commence_trade,
-                        plan_after
+                        plan_after,
+                        user_id
 
                     ) 
                     
@@ -34,7 +35,8 @@
                         :absent_reason,
                         :has_gained_skill,
                         :has_commence_trade,
-                        :plan_after
+                        :plan_after,
+                        :user_id
 
                      )";
             $sqlquery = Parent::query($Sql);
@@ -49,6 +51,7 @@
             Parent::bindParams('has_gained_skill', $payload['has_gained_skill']);
             Parent::bindParams('has_commence_trade', $payload['has_commence_trade']);
             Parent::bindParams('plan_after', $payload['plan_after']);
+            Parent::bindParams('user_id', $payload['user_id']);
             $newNpoCore = Parent::execute();           
            
             //print( $newCctCore);

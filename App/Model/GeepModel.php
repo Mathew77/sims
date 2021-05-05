@@ -35,8 +35,8 @@
                         avg_turnover_bf_loan,
                         remark,
                         created,
-                        gps
-
+                        gps,
+                        user_id
 
                     ) 
                     
@@ -67,7 +67,8 @@
                         :avg_turnover_bf_loan,
                         :remark,
                         :created,
-                        :gps
+                        :gps,
+                        :user_id
                      )";
             Parent::query($Sql);
             Parent::bindParams('beneficiaryid', $payload['beneficiaryid']);
@@ -100,6 +101,7 @@
             Parent::bindParams('remark', $payload['remark']);
             Parent::bindParams('created', $payload['created']);
             Parent::bindParams('gps', $payload['gps']);
+            Parent::bindParams('user_id', $payload['user_id']);
             $newGeepCore = Parent::execute();           
            
             //print( $newCctCore);

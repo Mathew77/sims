@@ -43,7 +43,7 @@
                 'avg_daily_expense' => $data->avg_daily_expense,
                 'avg_turnover_bf_loan' => $data->avg_turnover_bf_loan,
                 'gps' => $data->gps,
-                
+                'user_id' => $data->user_id,
 
             );
 
