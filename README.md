@@ -37,6 +37,23 @@ REQUEST BODY :
 
 ```
 
+2B. Change  User Password **`/api/v1/update-password  `**: **`HTTP POST`**
+
+```
+
+POST : http://simis.cleavey.com.ng/api/v1/user-auth
+
+REQUEST BODY :
+
+{
+
+    "userid": "ab-001-0002",
+    "pwd": "123456",
+    "old_password" : "123456"
+}
+
+```
+
 
 3. Get All the State, LGA, Programmes assign to user **`/api/v1/user-privilege`**: **`HTTP GET`**
 
