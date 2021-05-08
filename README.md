@@ -392,7 +392,7 @@ REQUEST BODY
 #
 
 18. UPDATE GEEP DATA ENTRY FORM 
-    ENDPOINT : localhost/sim/api/v1/geep-update
+    ENDPOINT : localhost/sim/api/v1/geep-update/1
 
 UPDATE GEEP DATA ENTRY 
 
@@ -435,7 +435,7 @@ REQYEST BODY
 ````
 
 19. UPDATE NPO DATA ENTRY FORM 
-    ENDPOINT : localhost/sim/api/v1/npo-update
+    ENDPOINT : localhost/sim/api/v1/npo-update/2
 
 UPDATE NPO DATA ENTRY 
 
