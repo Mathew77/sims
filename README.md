@@ -360,3 +360,84 @@ REQUEST BODY
 
 
 ```
+
+###
+16. FETCH GEEP BY ID
+    ENDPOINT : localhost/sim/api/v1/geep/1
+    MENTHOD : POST
+
+
+17. FETCH NPO BY ID
+    ENDPOINT : localhost/sim/api/v1/npo/1
+    MENTHOD : POST
+
+
+#
+
+18. UPDATE GEEP DATA ENTRY FORM 
+    ENDPOINT : localhost/sim/api/v1/geep-update
+
+UPDATE GEEP DATA ENTRY 
+
+```
+REQYEST BODY 
+
+
+{
+"id":1 ,
+"beneficiaryid":"4" ,
+"periodid":"3",
+"collected_date":"",
+"avg_daily_expense":"6" ,
+"avg_turnover_bf_loan":"3" ,
+"category_of_loan":"6" ,
+"avg_daily_turnover":"3" ,
+"amount_received":"3",
+"repayment_due":"",
+"staff_employed_female":"",
+"staff_employed_male":"",
+"has_paid_back":"",
+"profit_plough_back":"",
+"person_in_household":"" ,
+"is_tax_payer":"",
+"frequency_of_tax":"" ,
+"tax_amount":"",
+"is_head_of_household":"" ,
+"is_disabled":"" ,
+"remark":"",
+"created":"",
+"is_dependent": 2,
+"dependent_below_18": 2,
+"dependent_below_2": 2,
+"is_dependent_in_school": 3555,
+"is_dependent_below_2": 444,
+"dependent_immunized": 1,
+"gps": "5666,5555",
+"user_id" : "1"
+}
+````
+
+19. UPDATE NPO DATA ENTRY FORM 
+    ENDPOINT : localhost/sim/api/v1/npo-update
+
+UPDATE NPO DATA ENTRY 
+
+```
+REQYEST BODY 
+
+
+{
+"id":1 ,
+"beneficiaryid":"4" ,
+"periodid":"3",
+"collected_date": "2021-04-04",
+"has_received_stipend":"3",
+"work_days_inperiod":"3",
+"total_work_days":"3",
+"absent_reason":"3",
+"has_gained_skill":"3",
+"has_commence_trade":"3",
+"plan_after":"3",
+"user_id" : "1"
+}
+````

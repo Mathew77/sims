@@ -45,7 +45,11 @@
     $Klein->respond('POST', '/api/v1/beneficiaries', [ new BeneficiaryController(), 'fetch_beneficiary' ]); // Fetch Lga BY User ID
     $Klein->respond('POST', '/api/v1/cct', [ new CctController(), 'CreateCctCore' ]); // Create CCT Core
     $Klein->respond('POST', '/api/v1/geep', [ new GeepController(), 'CreateGeepCores' ]); // Create GEEP Core
+    $Klein->respond('POST', '/api/v1/geep/[:id]', [ new GeepController(), 'getGeepById' ]);
+    $Klein->respond('POST', '/api/v1/geep-update/[:id]', [ new GeepController(), 'updateGeep' ]);
     $Klein->respond('POST', '/api/v1/npo', [ new NpoController(), 'CreateNpoCores' ]); // Create GEEP Core
+    $Klein->respond('POST', '/api/v1/npo/[:id]', [ new NpoController(), 'getNpoById' ]);
+    $Klein->respond('POST', '/api/v1/npo-update/[:id]', [ new NpoController(), 'updateNpo' ]);
     // Dispatch all routes....
     $Klein->dispatch();
 
