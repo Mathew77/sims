@@ -4,6 +4,7 @@
     use Exception;
     use App\NpoModel;
     use App\Controller;
+    use App\BeneficiaryModel;
     
 
     class NpoController extends Controller {
@@ -72,6 +73,9 @@
                 
                 $NpoModel = new NpoModel();
                 $NpoData = $NpoModel::findNpoById($request->id);
+                $BeneficiciaryModel = new BeneficiaryModel();
+                $BeneficiaryDetail = $BeneficiciaryModel->beneficiaryDetail($NpoData['data']['beneficiaryid'], "npower");
+                $NpoData['data']['beneficiaryDetail'] = $BeneficiaryDetail;
                 if ($NpoData['status']) {
                     $Response['status'] = 200;
                     $Response['data'] = $NpoData['data'];

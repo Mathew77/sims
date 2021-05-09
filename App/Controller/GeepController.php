@@ -4,7 +4,7 @@
     use Exception;
     use App\GeepModel;
     use App\Controller;
-    
+    use App\BeneficiaryModel;
 
     class GeepController extends Controller {
         
@@ -89,6 +89,9 @@
                 
                 $GeepModel = new GeepModel();
                 $GeepData = $GeepModel::findGeepById($request->id);
+                $BeneficiciaryModel = new BeneficiaryModel();
+                $BeneficiaryDetail = $BeneficiciaryModel->beneficiaryDetail($GeepData['data']['beneficiaryid'], "geep");
+                $GeepData['data']['beneficiaryDetail'] = $BeneficiaryDetail;
                 if ($GeepData['status']) {
                     $Response['status'] = 200;
                     $Response['data'] = $GeepData['data'];

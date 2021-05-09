@@ -362,12 +362,12 @@ REQUEST BODY
 ```
 
 ###
-16. FETCH GEEP BY ID
+16. FETCH GEEP BY ID PER BENEFITCIARY (TO get the record that have been filled for that period )
     ENDPOINT : localhost/sim/api/v1/geep/1
     MENTHOD : POST
 
 
-17. FETCH NPO BY ID
+17. FETCH NPO BY ID PER BENEFITCIARY (TO get the record that have been filled for that period )
     ENDPOINT : localhost/sim/api/v1/npo/1
     MENTHOD : POST
 

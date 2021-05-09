@@ -162,11 +162,11 @@
                         );
                         $Jwt = JWT::encode($tokenPayload, $tokenSecret);
                         // Save JWT Token...
-                        // $TokenModel = new TokenModel();
-                        // $TokenModel->createToken([
-                        //     'user_id' => $UserData['data']['userid'],
-                        //     'jwt_token'=> $Jwt
-                        // ]);
+                        $TokenModel = new TokenModel();
+                        $TokenModel->createToken([
+                            'user_id' => $UserData['data']['userid'],
+                            'jwt_token'=> $Jwt
+                        ]);
                         $UserData['data']['token'] = $Jwt;
                         //check user Privilege
                         $UserData['data']['userid'];
@@ -174,16 +174,16 @@
                        
                         $UserDataPrivileges = $UserPrivilegeModel2->fetchUserPrivilegeById($UserData['data']['userid']);
                         $UserData['data']['privilege'] = $UserDataPrivileges;
-                     
-                            // Return Response............
+                        if($UserData['data']['privilege']['data']['userid'] =='admin'){
+                            $UserData['data']['privilege']['data']['program'] = "cct, geep, nhgsfp, npower";                           
+                        }
+                        // Return Response............
                         $Response['status'] = 201;
                         $Response['message'] = 'Login Successful';
                         $Response['data'] = $UserData;
                         
                         $response->code(201)->json($Response);
                         return;
-                        
-                        
                     }
 
                     $Response['status'] = 401;
@@ -209,5 +209,60 @@
                 return;
             }
         }
+        
+         public function updatePassword($request, $response)
+        {
+            
+            $Response = [];
+            $sapi_type = php_sapi_name();     
+            $data = json_decode($request->body());                   
+       
+            // Trim the response and create the account....
+            $payload = array(
+
+                'pwd' => password_hash($data->pwd, PASSWORD_BCRYPT),
+                'userid' => $data->userid,
+                'old_password' => $data->old_password,
+            );
+
+            try {
+                $UserModel = new UserModel();
+                
+                $UserData = $UserModel::checkLoginId($payload['userid']);
+                if ($UserData['status']) {
+                   
+                    if (password_verify($payload['old_password'], $UserData['data']['pwd'])) {
+                    
+                    // Return Response............
+                    $Response['status'] = 201;
+                    $Response['message'] = 'Password Change Successfully';
+                    $Response['data'] = $UserData;
+
+                    $response->code(201)->json($Response);
+                    return;
+                    }
+                    $Response['status'] = 401;
+                    $Response['message'] = 'Please, check your Old Password and try again.';
+                    $Response['data'] = [];
+                    $response->code(401)->json($Response);
+                    return;
+                }
+
+                $Response['status'] = 500;
+                $Response['message'] = 'An unexpected error occurred and your account could not be created. Please, try again later.';
+                $Response['data'] = [];
+
+                $response->code(500)->json($Response);
+                return;
+            } catch (Exception $e) {
+                $Response['status'] = 500;
+                $Response['message'] = $e->getMessage();
+                $Response['data'] = [];
+                
+                $response->code(500)->json($Response);
+                return;
+            }
+        }
+
     }
 ?>
