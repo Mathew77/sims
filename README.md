@@ -470,6 +470,7 @@ REQUEST BODY
 "periodid":"3",
 "collected_date": "2021-04-04",
 "class_feed_no":"3",
+"gps": "5566,8888",
 "user_id" : "1"
 }
 
