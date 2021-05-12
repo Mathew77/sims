@@ -458,3 +458,32 @@ REQYEST BODY
 "user_id" : "1"
 }
 ````
+
+19.CREATING SFP DATA ENTRY FORM ENDPOINT : localhost/sim/api/v1/sfp
+CREATE SFP DATA ENTRY
+
+REQUEST BODY 
+
+{
+"beneficiaryid":"4" ,
+"periodid":"3",
+"collected_date": "2021-04-04",
+"class_feed_no":"3",
+"user_id" : "1"
+}
+```
+
+20.CREATING SFP PERIODIC DATA ENTRY FORM ENDPOINT : localhost/sim/api/v1/sfp-periodic
+CREATE SFP PERIODICDATA ENTRY
+
+REQUEST BODY 
+
+{
+
+"coreid":21,
+"daily": "2021-04-04",
+"is_feeding":1,
+"no_of_pupil" :200,
+"food_type" :"Good one",
+"food_quality" :"Good"
+}
