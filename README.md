@@ -457,8 +457,9 @@ REQYEST BODY
 "plan_after":"3",
 "user_id" : "1"
 }
-````
 
+````
+####
 19.CREATING SFP DATA ENTRY FORM ENDPOINT : localhost/sim/api/v1/sfp
 CREATE SFP DATA ENTRY
 
@@ -471,6 +472,8 @@ REQUEST BODY
 "class_feed_no":"3",
 "user_id" : "1"
 }
+
+
 ```
 
 20.CREATING SFP PERIODIC DATA ENTRY FORM ENDPOINT : localhost/sim/api/v1/sfp-periodic
