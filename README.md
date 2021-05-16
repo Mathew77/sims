@@ -483,12 +483,45 @@ REQUEST BODY
 "user_id" : "1"
 }
 
+``` 
+###
+19B.UPDATE SFP DATA  FORM ENDPOINT : localhost/sim/api/v1/sfp-update/30
+    UPDATE SFP DATA ENTRY
+
+REQUEST BODY 
+
+{
+  "coreid": 30,
+"beneficiaryid":"4" ,
+"periodid":"3",
+"collected_date": "2021-04-04",
+"class_feed_no":"3",
+"gps": "5566,8888",
+"user_id" : "1"
+}
+
 
 ```
 
-
+###
 20.CREATING SFP PERIODIC DATA ENTRY FORM ENDPOINT : localhost/sim/api/v1/sfp-periodic
 CREATE SFP PERIODICDATA ENTRY
+
+REQUEST BODY 
+
+{
+"coreid":21,
+"daily": "2021-04-04",
+"is_feeding":1,
+"no_of_pupil" :200,
+"food_type" :"Good one",
+"food_quality" :"Good"
+}
+
+```
+###
+20B. UPDATE SFP PERIODIC DATA  FORM ENDPOINT : localhost/sim/api/v1/sfp-periodicupdate/30
+    UPDATE SFP PERIODIC DATA 
 
 REQUEST BODY 
 
