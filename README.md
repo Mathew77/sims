@@ -534,3 +534,64 @@ REQUEST BODY
 "food_type" :"Good one",
 "food_quality" :"Good"
 }
+
+###
+21. GET LIST OF NOTIFICATIONS  FORM ENDPOINT GET : localhost/sim/api/v1/notifications
+    METHOD : GET 
+
+RESPONSE BODY 
+
+{
+    "status": 201,
+    "message": "",
+    "data": {
+        "status": true,
+        "data": [
+            {
+                "id": "2",
+                "title": "test2",
+                "created": "2021-05-16 19:29:06",
+                "updated": null,
+                "details": "test 2 details",
+                "status": null
+            },
+            {
+                "id": "1",
+                "title": "test",
+                "created": "2021-05-16 19:28:11",
+                "updated": null,
+                "details": "testing details",
+                "status": null
+            }
+        ]
+    }
+}
+```
+###
+
+21. GET DETAIL OF A  NOTIFICATION  FORM ENDPOINT  POST : localhost/sim/api/v1/notifications/1
+    
+    METHOD : POST 
+RESPONSE BODY 
+
+{
+    "status": 201,
+    "message": "",
+    "data": {
+        "status": true,
+        "data": [
+            {
+                "id": "2",
+                "title": "test2",
+                "created": "2021-05-16 19:29:06",
+                "updated": null,
+                "details": "test 2 details",
+                "status": null
+            },
+            
+        ]
+    }
+}
+
+````
+###
