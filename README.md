@@ -485,6 +485,14 @@ REQUEST BODY
 
 ``` 
 ###
+
+19A.VIEW SFP DATA ENTRY FORM ENDPOINT : localhost/sim/api/v1/sfp/1
+    VIEW SFP DATA ENTRY
+
+
+
+``` 
+###
 19B.UPDATE SFP DATA  FORM ENDPOINT : localhost/sim/api/v1/sfp-update/30
     UPDATE SFP DATA ENTRY
 
@@ -519,6 +527,13 @@ REQUEST BODY
 }
 
 ```
+
+20A.VIEW SFP PERIODIC  DATA ENTRY FORM ENDPOINT : localhost/sim/api/v1/sfp-periodic/2
+    VIEW SFP PERIODIC DATA ENTRY
+
+
+
+``` 
 ###
 20B. UPDATE SFP PERIODIC DATA  FORM ENDPOINT : localhost/sim/api/v1/sfp-periodicupdate/30
     UPDATE SFP PERIODIC DATA 
