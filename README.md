@@ -481,6 +481,7 @@ REQUEST BODY
 "class_feed_no":"3",
 "gps": "5566,8888",
 "user_id" : "1"
+
 }
 
 ``` 
@@ -523,7 +524,8 @@ REQUEST BODY
 "is_feeding":1,
 "no_of_pupil" :200,
 "food_type" :"Good one",
-"food_quality" :"Good"
+"food_quality" :"Good",
+"day" : 1
 }
 
 ```
