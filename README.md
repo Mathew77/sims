@@ -239,7 +239,8 @@ REQUEST:
     { 
     "state_id": 1, 
     "lga_id" : 1,
-    "programme_type" : "gee"
+    "programme_type" : "gee",
+    "periodid" : 1
  }
 ```
 RESPONSE :
