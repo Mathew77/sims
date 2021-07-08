@@ -613,3 +613,19 @@ RESPONSE BODY
 
 ````
 ###
+
+23. GET list of Beneficiary base on program type 
+
+```
+    POST : localhost/sim/api/v1/beneficiaries
+
+```
+REQUEST: 
+    { 
+    "state_id": 1, 
+    "lga_id" : 1,
+    "programme_type" : "geep"
+ }
+ 
+```
+###
