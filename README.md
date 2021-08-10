@@ -662,7 +662,7 @@ REQUEST:
     "user_id": 2,
     "user_state"  : "abia,adamawa,sokoto,jos",
     "user_lga" : "Aba North, Aba South, Arochukwu,Demsa",
-    "programme_type" : "gee" 
+    "programme_type" : "geep" 
     }
     
     OR 
@@ -671,7 +671,7 @@ REQUEST:
     "user_id": 2,
     "user_state"  : "abia,adamawa,sokoto,jos",
     "user_lga" : "Aba North, Aba South, Arochukwu,Demsa",
-    "programme_type" : "sfp" 
+    "programme_type" : "nhgsfp" 
     }
  
 ```
