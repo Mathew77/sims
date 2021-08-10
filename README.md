@@ -675,5 +675,303 @@ REQUEST:
     }
  
 ```
+SAMPLE RESPONSE 
+
+{
+    "status": 200,
+    "period": [
+        {
+            "periodid": "1",
+            "fullname": "Jan - Mar 2021",
+            "priority": "1",
+            "start_date": "2021-01-01",
+            "end_date": "2021-03-31",
+            "active": "1"
+        },
+        {
+            "periodid": "2",
+            "fullname": "Apr - Jun 2021",
+            "priority": "2",
+            "start_date": "2021-04-01",
+            "end_date": "2021-06-30",
+            "active": "1"
+        },
+        {
+            "periodid": "3",
+            "fullname": "Jul - Sep 2021",
+            "priority": "3",
+            "start_date": "2021-07-01",
+            "end_date": "2021-09-30",
+            "active": "1"
+        }
+    ],
+    "state": [
+        {
+            "StateId": "1",
+            "RegionId": "4",
+            "Fullname": "ABIA",
+            "Label": "AB",
+            "Zone": "South East",
+            "Description": null
+        },
+        {
+            "StateId": "2",
+            "RegionId": "2",
+            "Fullname": "ADAMAWA",
+            "Label": "AD",
+            "Zone": "North East",
+            "Description": null
+        },
+        {
+            "StateId": "34",
+            "RegionId": "3",
+            "Fullname": "SOKOTO",
+            "Label": "SO",
+            "Zone": "North West",
+            "Description": null
+        }
+    ],
+    "lga": [
+        {
+            "LgaId": "1",
+            "StateId": "1",
+            "Fullname": "Aba North",
+            "Description": null
+        },
+        {
+            "LgaId": "18",
+            "StateId": "2",
+            "Fullname": "Demsa",
+            "Description": null
+        }
+    ],
+    "benficiaries": [
+        {
+            "beneficiaryid": "1",
+            "first": "James",
+            "middle": "Kingsley",
+            "last": "Ndidi",
+            "ward": "",
+            "gender": "Male",
+            "phone": "08083838383",
+            "total": "2",
+            "record": "Yes",
+            "geep_id": "BI/001/92929",
+            "ID": "1",
+            "period_id": "1"
+        },
+        {
+            "beneficiaryid": "2",
+            "first": "Kamilu",
+            "middle": "Baderu",
+            "last": "Solomon",
+            "ward": "",
+            "gender": "Male",
+            "phone": "08099399393",
+            "total": "2",
+            "record": "Yes",
+            "geep_id": "BI-003-00920",
+            "ID": "2",
+            "period_id": "2"
+        },
+        {
+            "beneficiaryid": "987",
+            "first": "Titan",
+            "middle": null,
+            "last": "Zion",
+            "ward": null,
+            "gender": "Male",
+            "phone": "8032684070",
+            "total": "1",
+            "record": "Yes",
+            "geep_id": null,
+            "ID": "16",
+            "period_id": "1"
+        },
+        {
+            "beneficiaryid": "988",
+            "first": "Landon",
+            "middle": null,
+            "last": "Melvin",
+            "ward": null,
+            "gender": "Female",
+            "phone": "8033554053",
+            "total": "1",
+            "record": "Yes",
+            "geep_id": null,
+            "ID": "18",
+            "period_id": "1"
+        },
+        {
+            "beneficiaryid": "989",
+            "first": "Dustin",
+            "middle": null,
+            "last": "Grady",
+            "ward": null,
+            "gender": "Female",
+            "phone": "8064570792",
+            "total": null,
+            "record": "No",
+            "geep_id": null,
+            "ID": null,
+            "period_id": null
+        },
+        {
+            "beneficiaryid": "990",
+            "first": "Aiden",
+            "middle": null,
+            "last": "Joseph",
+            "ward": null,
+            "gender": "Female",
+            "phone": "8031633199",
+            "total": null,
+            "record": "No",
+            "geep_id": null,
+            "ID": null,
+            "period_id": null
+        },
+        {
+            "beneficiaryid": "991",
+            "first": "Gabriel",
+            "middle": null,
+            "last": "Joseph",
+            "ward": null,
+            "gender": "Male",
+            "phone": "8062425277",
+            "total": null,
+            "record": "No",
+            "geep_id": null,
+            "ID": null,
+            "period_id": null
+        },
+        {
+            "beneficiaryid": "992",
+            "first": "Bryson",
+            "middle": null,
+            "last": "Abubakar",
+            "ward": null,
+            "gender": "Female",
+            "phone": "8033633483",
+            "total": null,
+            "record": "No",
+            "geep_id": null,
+            "ID": null,
+            "period_id": null
+        },
+        {
+            "beneficiaryid": "993",
+            "first": "Richard",
+            "middle": null,
+            "last": "Bryant",
+            "ward": null,
+            "gender": "Male",
+            "phone": "8064524447",
+            "total": null,
+            "record": "No",
+            "geep_id": null,
+            "ID": null,
+            "period_id": null
+        },
+        {
+            "beneficiaryid": "2755",
+            "first": "Archie",
+            "middle": null,
+            "last": "Major",
+            "ward": null,
+            "gender": "Male",
+            "phone": "8063048833",
+            "total": null,
+            "record": "No",
+            "geep_id": null,
+            "ID": null,
+            "period_id": null
+        },
+        {
+            "beneficiaryid": "2756",
+            "first": "Jagger",
+            "middle": null,
+            "last": "Kaiser",
+            "ward": null,
+            "gender": "Male",
+            "phone": "8055703624",
+            "total": null,
+            "record": "No",
+            "geep_id": null,
+            "ID": null,
+            "period_id": null
+        },
+        {
+            "beneficiaryid": "2757",
+            "first": "Jeremias",
+            "middle": null,
+            "last": "Billy",
+            "ward": null,
+            "gender": "Male",
+            "phone": "8064818092",
+            "total": null,
+            "record": "No",
+            "geep_id": null,
+            "ID": null,
+            "period_id": null
+        },
+        {
+            "beneficiaryid": "2758",
+            "first": "Myles",
+            "middle": null,
+            "last": "Mauricio",
+            "ward": null,
+            "gender": "Female",
+            "phone": "8062116179",
+            "total": "1",
+            "record": "Yes",
+            "geep_id": null,
+            "ID": "5",
+            "period_id": "1"
+        },
+        {
+            "beneficiaryid": "2759",
+            "first": "Ayden",
+            "middle": null,
+            "last": "Quinton",
+            "ward": null,
+            "gender": "Female",
+            "phone": "8063956209",
+            "total": null,
+            "record": "No",
+            "geep_id": null,
+            "ID": null,
+            "period_id": null
+        },
+        {
+            "beneficiaryid": "2760",
+            "first": "Adam",
+            "middle": null,
+            "last": "Bruno",
+            "ward": null,
+            "gender": "Male",
+            "phone": "8063121326",
+            "total": null,
+            "record": "No",
+            "geep_id": null,
+            "ID": null,
+            "period_id": null
+        },
+        {
+            "beneficiaryid": "2761",
+            "first": "Bode",
+            "middle": null,
+            "last": "Aidan",
+            "ward": null,
+            "gender": "Male",
+            "phone": "8031827716",
+            "total": null,
+            "record": "No",
+            "geep_id": null,
+            "ID": null,
+            "period_id": null
+        }
+    ],
+    "message": "Successful Download Offline Geep Record"
+}
 ###
 
