@@ -382,7 +382,8 @@ REQUEST BODY
 "has_gained_skill":"3",
 "has_commence_trade":"3",
 "plan_after":"3",
-"user_id" : "1"
+"user_id" : "1",
+"gps" : "45544.55,0.88993"
 }
 
 
