@@ -629,3 +629,51 @@ REQUEST:
  
 ```
 ###
+
+24.ENDPOINT TO DOWNLOAD OFFLINE PER  PROGRAMMES 
+
+```
+    POST : localhost/sim/api/v1/download-cct-offline     FOR CCT 
+    POST : localhost/sim/api/v1/download-geep-offline    FOR GEEP
+    POST : localhost/sim/api/v1/download-npo-offline     FOR NPO
+    POST : localhost/sim/api/v1/download-sfp-offline      FOR SFP
+
+```
+REQUEST: 
+    {
+    "user_id": 2,
+    "user_state"  : "abia,adamawa,sokoto,jos",
+    "user_lga" : "Aba North, Aba South, Arochukwu,Demsa",
+    "programme_type" : "cct" 
+    }
+    
+    OR 
+    
+    {
+    "user_id": 2,
+    "user_state"  : "abia,adamawa,sokoto,jos",
+    "user_lga" : "Aba North, Aba South, Arochukwu,Demsa",
+    "programme_type" : "npo" 
+    }
+    
+    OR 
+    
+    {
+    "user_id": 2,
+    "user_state"  : "abia,adamawa,sokoto,jos",
+    "user_lga" : "Aba North, Aba South, Arochukwu,Demsa",
+    "programme_type" : "gee" 
+    }
+    
+    OR 
+    
+    {
+    "user_id": 2,
+    "user_state"  : "abia,adamawa,sokoto,jos",
+    "user_lga" : "Aba North, Aba South, Arochukwu,Demsa",
+    "programme_type" : "sfp" 
+    }
+ 
+```
+###
+
