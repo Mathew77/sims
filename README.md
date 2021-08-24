@@ -285,7 +285,7 @@ REQYEST BODY
 "periodid":"3", "collected_date":"2021-12-21", "is_disability":"6" , 
 "is_bank":"3" , "bank_distance":"3", "is_bvn":"1", "is_nin":"1", "is_household_head":"1",
 "income_source":"1", "household_income_perday":"1", "is_part_cooperative":"1" ,
-"person_in_household":"1", "dependant_below_18":"1" , "dependant_below_2":"1", 
+"person_in_household":"1", "dependant_below_18":"1" , "is_dependent_below_2": "1", "dependant_below_2":"1", 
 "dependent_in_school":"1" , "children_immunized":"1" , "remark":"1", "created":"2021-02-21",
 "has_collected": 2, "payment_date":"2021-02-21", "data_collected_date": "2021-02-21",
 "amount_paid": 3555, "total_amount": 444, "is_challenging": 1, "gps": "5666,5555", "user_id" : "1" 
