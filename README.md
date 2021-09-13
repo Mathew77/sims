@@ -654,7 +654,7 @@ REQUEST:
     "user_id": 2,
     "user_state"  : "abia,adamawa,sokoto,jos",
     "user_lga" : "Aba North, Aba South, Arochukwu,Demsa",
-    "programme_type" : "npo" 
+    "programme_type" : "npower" 
     }
     
     OR 
